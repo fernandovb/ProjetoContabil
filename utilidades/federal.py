@@ -2,13 +2,39 @@
 # module federal
 # from (built-in)
 # version 0.01
+# Author: Fernando Vicente Batista
+# Contact: fernandovicente.batista@gmail.com
 """
 Análise de informações de cadastros federais brasileiros
 """
+
 import re
+
+__version__: str = 'Versão 0.01 - em desenvolvimento'
+
+__all__ = [
+    'limpa_cadastro',
+    'formata_cadastro',
+    'validar',
+    'digito',
+]
+
 
 # Variables with simple values
 n = {'CPF': 11, 'CNPJ': 14}
+
+
+# Classes
+class MyError(Exception):
+    pass
+
+
+class TamanhoError(MyError):
+    pass
+
+
+class DocVazioError(MyError):
+    pass
 
 
 # functions
@@ -23,7 +49,7 @@ def limpa_cadastro(doc: object, tipo: object = 'CPF') -> object:
     """
     docl = ''.join(re.findall('\d', doc)).zfill(n[tipo])
     if len(docl) > n[tipo]:
-        return 'Tamanho do cadastro incorreto. Favor verificar!'
+        raise TamanhoError(f'{tipo} deve conter no máximo {n[tipo]} números.')
     else:
         return docl
 
@@ -71,6 +97,10 @@ def validar(doc: object, tipo: object = 'CPF') -> object:
     for i in range(0, len(doc)):
         if doc[i] in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
             docl = docl + doc[i]
+    if len(docl) > n[tipo]:
+        raise TamanhoError(f'{tipo} deve conter no máximo {n[tipo]} números.')
+    if len(docl) <= 2:
+        raise DocVazioError('Documento não possui digitos para análise')
     if tipo == 'CPF':
         docl = docl.zfill(n[tipo])
         for i in range(0, 9):
@@ -111,24 +141,27 @@ def validar(doc: object, tipo: object = 'CPF') -> object:
             return True
         else:
             return False
-    else:
-        return 'Tamanho do documento incorreto. Favor verificar'
 
 
 def digito(doc, tipo='CPF', digv=True):
     """Calcula o digito correto do cadastro
     Ao ser informado o número do cadastro, sem o dígito, será calculado o digito correto
 
-    :param doc: número do cadastro federal, sem o digito
-    :param tipo: informa se é CPF ou CNPJ
-    :param digv: informa se o digito verificador foi informado
-    :return: digito verificador com dois digitos
+    :param doc: número do cadastro federal, sem o digito;
+    :param tipo: informa se é CPF ou CNPJ;
+    :param digv: informa se o digito verificador foi informado, mesmo que inválido. Se não houver digito,
+    somente os demais números do CNPJ, informe True;
+    :return: digito verificador com dois digitos.
     """
     docl = ''
     val = 0
     for i in range(0, len(doc)):
         if doc[i] in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
             docl = docl + doc[i]
+    if len(docl) > n[tipo]:
+        raise TamanhoError(f'{tipo} deve conter no máximo {n[tipo]} números.')
+    if len(docl) <= 2:
+        raise DocVazioError('Documento não possui digitos para análise')
     if tipo == 'CPF':
         if digv:
             docl = docl[:-2].zfill(9)
