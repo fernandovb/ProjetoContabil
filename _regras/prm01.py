@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from _telas.tela_pessoa import FrmPessoa
 
 

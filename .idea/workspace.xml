@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ferna.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/dbemp01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/prm01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/sblog01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contabilidade/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contabilidade/contabil.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contabilidade/menu_texto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilidades/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProjetoContabil.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProjetoContabil.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções.">
+      <change afterPath="$PROJECT_DIR$/_regras/mn01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilidades/federal.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/federal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilidades/num_extenso.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/num_extenso.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dados/conexao.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/conexao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_regras/dbemp01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/dbemp01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_regras/prm01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/prm01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaEmpresa.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/TelaEmpresa.fbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_pessoa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/tl_login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/tela_empresa.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/tela_empresa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/tela_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/tela_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,43 +26,54 @@
     <session id="509873792">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="3" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.43" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.87" value="1" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="35" />
+          <entry key="py" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="35" />
+          <entry key="Python" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="360" />
-          <entry key="py" value="13052" />
+          <entry key="Python Console" value="4522" />
+          <entry key="dummy" value="4" />
+          <entry key="py" value="22235" />
+          <entry key="txt" value="133" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="13412" />
+          <entry key="PLAIN_TEXT" value="137" />
+          <entry key="Python" value="26757" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -75,27 +81,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_regras/dbemp01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-end-line="1" />
+            <state relative-caret-position="102">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
-                <element signature="e#25#38#0" expanded="true" />
-                <marker date="1541531856878" expanded="true" signature="822:864" ph="..." />
+                <element signature="e#25#67#0" expanded="true" />
+                <marker date="1542240003921" expanded="true" signature="10642:10646" ph="..." />
+                <marker date="1542240003921" expanded="true" signature="10670:10689" ph="..." />
+                <marker date="1542240003921" expanded="true" signature="10960:11177" ph="..." />
+                <marker date="1542240003921" expanded="true" signature="11205:11224" ph="..." />
+                <marker date="1542240003921" expanded="true" signature="11302:11352" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_regras/sblog01.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_telas/tela_empresa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="1241">
+              <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
               <folding>
-                <element signature="e#25#40#0" expanded="true" />
+                <element signature="e#316#325#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_regras/mn01.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="79" column="110" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="110" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+                <marker date="1541699586457" expanded="true" signature="1398:1399" ph="..." />
+                <marker date="1541699586457" expanded="true" signature="1398:1404" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_dados/conexao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -112,9 +145,18 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>statub</find>
+      <find>stb</find>
+      <find>bt</find>
+      <find>tb_gera</find>
+      <find>kwargs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="fernandovb &lt;40531223+fernandovb@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -127,10 +169,14 @@
         <option value="$PROJECT_DIR$/telas/tl_login.py" />
         <option value="$PROJECT_DIR$/telas/tela_login.py" />
         <option value="$PROJECT_DIR$/telas/tela_empresa.py" />
-        <option value="$PROJECT_DIR$/_regras/dbemp01.py" />
+        <option value="$PROJECT_DIR$/_regras/sblog01.py" />
         <option value="$PROJECT_DIR$/_regras/prm01.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/_regras/sblog01.py" />
+        <option value="$PROJECT_DIR$/_telas/tela_menu.py" />
+        <option value="$PROJECT_DIR$/_regras/mn01.py" />
+        <option value="$PROJECT_DIR$/_dados/conexao.py" />
+        <option value="$PROJECT_DIR$/_telas/tela_empresa.py" />
+        <option value="$PROJECT_DIR$/_regras/dbemp01.py" />
       </list>
     </option>
   </component>
@@ -171,6 +217,11 @@
             <path>
               <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
+              <item name="_dados" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
               <item name="_regras" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -195,7 +246,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ProjetoContabil" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -238,9 +289,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mn01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ProjetoContabil" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files (x86)\Python\Python 3.7\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_regras" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_regras/mn01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.mn01" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.mn01" />
       </list>
     </recent_temporary>
   </component>
@@ -255,26 +332,43 @@
       <option name="presentableId" value="Default" />
       <updated>1540418234043</updated>
     </task>
+    <task id="LOCAL-00001" summary="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções.">
+      <created>1541532092315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541532092315</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20621282" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.101784535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49966952" weight="0.25531915" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -301,6 +395,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções." />
+    <option name="LAST_COMMIT_MESSAGE" value="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -330,89 +429,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dados/conexao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telas/tela_pessoa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telas/tela_menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="66" lean-forward="true" selection-start-line="97" selection-start-column="66" selection-end-line="97" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dados/conexao.py" />
+    <entry file="file://$PROJECT_DIR$/telas/tela_pessoa.py" />
+    <entry file="file://$PROJECT_DIR$/telas/tela_menu.py" />
     <entry file="file://$PROJECT_DIR$/telas/tl_login.py" />
-    <entry file="file://$PROJECT_DIR$/telas/tela_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telas/tela_empresa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5321">
-          <caret line="315" selection-start-line="315" selection-end-line="315" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/tela_empresa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5395">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_regras/dbemp01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-          <folding>
-            <marker date="1541530526035" expanded="true" signature="68:69" ph="..." />
-            <marker date="1541530526035" expanded="true" signature="68:74" ph="..." />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/telas/tela_login.py" />
+    <entry file="file://$PROJECT_DIR$/telas/tela_empresa.py" />
+    <entry file="file://$PROJECT_DIR$/_regras/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/_regras/prm01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <marker date="1541530656128" expanded="true" signature="66:67" ph="..." />
-            <marker date="1541530656128" expanded="true" signature="66:72" ph="..." />
-          </folding>
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/tela_menu_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="43" lean-forward="true" selection-start-line="38" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/tela_login.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/tela_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-643">
+          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-end-line="1" />
-          <folding>
-            <element signature="e#25#38#0" expanded="true" />
-            <marker date="1541531856878" expanded="true" signature="822:864" ph="..." />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/tela_empresaFrmEmpresa.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1967916687/wx/_core/Frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1084">
+          <caret line="249" column="19" lean-forward="true" selection-start-line="249" selection-start-column="19" selection-end-line="249" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1967916687/wx/_core/TextCtrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="417" column="8" selection-start-line="417" selection-start-column="8" selection-end-line="417" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_regras/sblog01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="51">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1967916687/wx/_grid/Grid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="1678" column="8" selection-start-line="1678" selection-start-column="8" selection-end-line="1678" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/dbemp01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding>
-            <element signature="e#25#40#0" expanded="true" />
+            <element signature="e#25#67#0" expanded="true" />
+            <element signature="e#109#12725#0" />
+            <marker date="1542240003921" expanded="true" signature="10642:10646" ph="..." />
+            <marker date="1542240003921" expanded="true" signature="10670:10689" ph="..." />
+            <marker date="1542240003921" expanded="true" signature="10960:11177" ph="..." />
+            <marker date="1542240003921" expanded="true" signature="11205:11224" ph="..." />
+            <marker date="1542240003921" expanded="true" signature="11302:11352" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/tela_empresa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding>
+            <element signature="e#316#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/mn01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="79" column="110" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="110" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+            <marker date="1541699586457" expanded="true" signature="1398:1399" ph="..." />
+            <marker date="1541699586457" expanded="true" signature="1398:1404" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/conexao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

@@ -23,17 +23,21 @@ class FrmEmpresa ( wx.Frame ):
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
 		self.tb_geral = self.CreateToolBar( 0, wx.ID_ANY ) 
-		self.bt_adicionar = self.tb_geral.AddLabelTool( wx.ID_ANY, u"Novo", wx.Bitmap( u"icons/ac_adicionar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.bt_buscar = self.tb_geral.AddLabelTool( wx.ID_FIND, u"Localizar registro", wx.Bitmap( u"icons/ac_buscar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.bt_editar = self.tb_geral.AddLabelTool( wx.ID_ANY, u"Alterar registro", wx.Bitmap( u"icons/ac_editar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.bt_adicionar = self.tb_geral.AddLabelTool( wx.ID_ADD, u"Novo", wx.Bitmap( u"icons/ac_adicionar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.bt_buscar = self.tb_geral.AddLabelTool( wx.ID_ANY, u"Localizar registro", wx.Bitmap( u"icons/ac_buscar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.bt_editar = self.tb_geral.AddLabelTool( wx.ID_EDIT, u"Alterar registro", wx.Bitmap( u"icons/ac_editar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.tb_geral.AddSeparator()
 		
-		self.bt_confirmar = self.tb_geral.AddLabelTool( wx.ID_ANY, u"Salvar modificações", wx.Bitmap( u"icons/ac_confirmar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.bt_confirmar = self.tb_geral.AddLabelTool( wx.ID_APPLY, u"Salvar modificações", wx.Bitmap( u"icons/ac_confirmar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.bt_cancelar = self.tb_geral.AddLabelTool( wx.ID_ANY, u"Cancelar alterações", wx.Bitmap( u"icons/ac_cancelar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.bt_cancelar = self.tb_geral.AddLabelTool( wx.ID_ABORT, u"Cancelar alterações", wx.Bitmap( u"icons/ac_cancelar_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		
+		self.tb_geral.AddSeparator()
+		
+		self.m_tool6 = self.tb_geral.AddLabelTool( wx.ID_CLOSE, u"tool", wx.Bitmap( u"icons/ac_sair_32x32.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.tb_geral.Realize() 
 		
@@ -41,28 +45,41 @@ class FrmEmpresa ( wx.Frame ):
 		
 		lay_cabecalho = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.lb_codigo = wx.StaticText( self, wx.ID_ANY, u"Código:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.lb_codigo = wx.StaticText( self, wx.ID_ANY, u"Código:", wx.DefaultPosition, wx.Size( 60,26 ), 0 )
 		self.lb_codigo.Wrap( -1 )
 		lay_cabecalho.Add( self.lb_codigo, 0, wx.ALL, 5 )
 		
-		self.tb_codigo = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		lay_cabecalho.Add( self.tb_codigo, 0, wx.ALL, 5 )
+		self.tc_codigo = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		lay_cabecalho.Add( self.tc_codigo, 0, wx.ALL, 5 )
 		
-		self.tb_nome = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 300,-1 ), 0 )
-		self.tb_nome.Enable( False )
+		self.lb_nome = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 300,26 ), 0 )
+		self.lb_nome.Wrap( -1 )
+		self.lb_nome.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 		
-		lay_cabecalho.Add( self.tb_nome, 0, wx.ALL, 5 )
+		lay_cabecalho.Add( self.lb_nome, 0, wx.ALL, 5 )
 		
-		self.lb_tipo = wx.StaticText( self, wx.ID_ANY, u"Tipo:", wx.DefaultPosition, wx.Size( 150,-1 ), wx.ALIGN_RIGHT )
+		self.lb_tipo = wx.StaticText( self, wx.ID_ANY, u"Tipo:", wx.DefaultPosition, wx.Size( 100,26 ), wx.ALIGN_RIGHT )
 		self.lb_tipo.Wrap( -1 )
 		lay_cabecalho.Add( self.lb_tipo, 0, wx.ALL, 5 )
 		
 		cb_tipoChoices = [ u"PF", u"PJ" ]
 		self.cb_tipo = wx.ComboBox( self, wx.ID_ANY, u"PF", wx.DefaultPosition, wx.DefaultSize, cb_tipoChoices, 0 )
+		self.cb_tipo.Enable( False )
+		
 		lay_cabecalho.Add( self.cb_tipo, 0, wx.ALL, 5 )
 		
+		self.lb_situacao = wx.StaticText( self, wx.ID_ANY, u"Situação:", wx.DefaultPosition, wx.Size( 100,-1 ), wx.ALIGN_RIGHT )
+		self.lb_situacao.Wrap( -1 )
+		lay_cabecalho.Add( self.lb_situacao, 0, wx.ALL, 5 )
 		
-		lay_corpo.Add( lay_cabecalho, 0, wx.EXPAND, 5 )
+		cb_situacaoChoices = [ u"Ativo", u"Análise", u"Bloqueado", u"Saneamento", u"Cancelado" ]
+		self.cb_situacao = wx.ComboBox( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, cb_situacaoChoices, 0 )
+		self.cb_situacao.Enable( False )
+		
+		lay_cabecalho.Add( self.cb_situacao, 0, wx.ALL, 5 )
+		
+		
+		lay_corpo.Add( lay_cabecalho, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
 		
 		lay_guias = wx.BoxSizer( wx.VERTICAL )
 		
@@ -109,26 +126,40 @@ class FrmEmpresa ( wx.Frame ):
 		
 		lay_cad_text1 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_textCtrl14 = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
-		lay_cad_text1.Add( self.m_textCtrl14, 0, wx.ALL, 5 )
+		self.tc_nome_formal = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+		self.tc_nome_formal.Enable( False )
 		
-		self.m_textCtrl15 = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
-		lay_cad_text1.Add( self.m_textCtrl15, 0, wx.ALL, 5 )
+		lay_cad_text1.Add( self.tc_nome_formal, 0, wx.ALL, 5 )
+		
+		self.tc_nome_alternativo = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+		self.tc_nome_alternativo.Enable( False )
+		
+		lay_cad_text1.Add( self.tc_nome_alternativo, 0, wx.ALL, 5 )
 		
 		self.tc_logradouro = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+		self.tc_logradouro.Enable( False )
+		
 		lay_cad_text1.Add( self.tc_logradouro, 0, wx.ALL, 5 )
 		
 		self.tc_numero = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 90,26 ), 0 )
+		self.tc_numero.Enable( False )
+		
 		lay_cad_text1.Add( self.tc_numero, 0, wx.ALL, 5 )
 		
 		self.tc_bairro = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,26 ), 0 )
+		self.tc_bairro.Enable( False )
+		
 		lay_cad_text1.Add( self.tc_bairro, 0, wx.ALL, 5 )
 		
 		self.tc_municipio = wx.TextCtrl( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+		self.tc_municipio.Enable( False )
+		
 		lay_cad_text1.Add( self.tc_municipio, 0, wx.ALL, 5 )
 		
-		cb_estadoChoices = []
-		self.cb_estado = wx.ComboBox( lay_cadastrais.GetStaticBox(), wx.ID_ANY, u"Combo!", wx.DefaultPosition, wx.Size( 50,26 ), cb_estadoChoices, 0 )
+		cb_estadoChoices = [ u"MT", u"MS", u"MG", u"RJ", u"RG", u"RN", u"RR", u"ES", u"SP", u"SC", u"PR", u"PI", u"BA" ]
+		self.cb_estado = wx.ComboBox( lay_cadastrais.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,26 ), cb_estadoChoices, 0 )
+		self.cb_estado.Enable( False )
+		
 		lay_cad_text1.Add( self.cb_estado, 0, wx.ALL, 5 )
 		
 		
@@ -140,16 +171,6 @@ class FrmEmpresa ( wx.Frame ):
 		lay_caracteristicas = wx.StaticBoxSizer( wx.StaticBox( self.pn_dados_basicos, wx.ID_ANY, u"Características" ), wx.VERTICAL )
 		
 		lay_carac_lab1 = wx.BoxSizer( wx.VERTICAL )
-		
-		rb_generoChoices = [ u"Masculino", u"Feminino" ]
-		self.rb_genero = wx.RadioBox( lay_caracteristicas.GetStaticBox(), wx.ID_ANY, u"Gênero", wx.DefaultPosition, wx.Size( 200,100 ), rb_generoChoices, 1, wx.RA_SPECIFY_COLS )
-		self.rb_genero.SetSelection( 0 )
-		lay_carac_lab1.Add( self.rb_genero, 0, wx.ALL, 5 )
-		
-		rb_opcaoChoices = [ u"Heterossexual", u"Homossexual", u"Transexual", u"Bissexual", u"Agenero" ]
-		self.rb_opcao = wx.RadioBox( lay_caracteristicas.GetStaticBox(), wx.ID_ANY, u"Opção Sexual", wx.DefaultPosition, wx.Size( 200,200 ), rb_opcaoChoices, 1, wx.RA_SPECIFY_COLS )
-		self.rb_opcao.SetSelection( 0 )
-		lay_carac_lab1.Add( self.rb_opcao, 0, wx.ALL, 5 )
 		
 		
 		lay_caracteristicas.Add( lay_carac_lab1, 0, wx.EXPAND, 5 )
@@ -169,31 +190,10 @@ class FrmEmpresa ( wx.Frame ):
 		
 		lay_reg_lab1 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.lb_federal = wx.StaticText( lay_registros.GetStaticBox(), wx.ID_ANY, u"Federal:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
-		self.lb_federal.Wrap( -1 )
-		lay_reg_lab1.Add( self.lb_federal, 0, wx.ALL, 5 )
-		
-		self.lb_estadual = wx.StaticText( lay_registros.GetStaticBox(), wx.ID_ANY, u"Estadual:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
-		self.lb_estadual.Wrap( -1 )
-		lay_reg_lab1.Add( self.lb_estadual, 0, wx.ALL, 5 )
-		
-		self.lb_municipal = wx.StaticText( lay_registros.GetStaticBox(), wx.ID_ANY, u"Municipal:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
-		self.lb_municipal.Wrap( -1 )
-		lay_reg_lab1.Add( self.lb_municipal, 0, wx.ALL, 5 )
-		
 		
 		lay_registros.Add( lay_reg_lab1, 0, wx.EXPAND, 5 )
 		
 		lay_reg_lab2 = wx.BoxSizer( wx.VERTICAL )
-		
-		self.tc_federal = wx.TextCtrl( lay_registros.GetStaticBox(), wx.ID_ANY, u"00.000.000/0000-00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
-		lay_reg_lab2.Add( self.tc_federal, 0, wx.ALL, 5 )
-		
-		self.tc_estadual = wx.TextCtrl( lay_registros.GetStaticBox(), wx.ID_ANY, u"99.999.999-00", wx.DefaultPosition, wx.Size( 120,26 ), 0 )
-		lay_reg_lab2.Add( self.tc_estadual, 0, wx.ALL, 5 )
-		
-		self.tc_municipal = wx.TextCtrl( lay_registros.GetStaticBox(), wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 120,26 ), 0 )
-		lay_reg_lab2.Add( self.tc_municipal, 0, wx.ALL, 5 )
 		
 		
 		lay_registros.Add( lay_reg_lab2, 1, wx.EXPAND, 5 )
@@ -239,15 +239,19 @@ class FrmEmpresa ( wx.Frame ):
 		self.pn_socios = wx.Panel( self.nb_dados, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		lay_socios = wx.BoxSizer( wx.VERTICAL )
 		
+		self.m_notebook2 = wx.Notebook( self.pn_socios, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.NB_NOPAGETHEME )
+		self.pn_lista_socios = wx.Panel( self.m_notebook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer20 = wx.BoxSizer( wx.VERTICAL )
+		
 		lay_total = wx.BoxSizer( wx.VERTICAL )
 		
 		lay_label = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.lb_quotas = wx.StaticText( self.pn_socios, wx.ID_ANY, u"Total de Quotas", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_CENTRE )
+		self.lb_quotas = wx.StaticText( self.pn_lista_socios, wx.ID_ANY, u"Total de Quotas", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_CENTRE )
 		self.lb_quotas.Wrap( -1 )
 		lay_label.Add( self.lb_quotas, 0, wx.ALL, 5 )
 		
-		self.lb_capital = wx.StaticText( self.pn_socios, wx.ID_ANY, u"Capital Total", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_CENTRE )
+		self.lb_capital = wx.StaticText( self.pn_lista_socios, wx.ID_ANY, u"Capital Total", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_CENTRE )
 		self.lb_capital.Wrap( -1 )
 		lay_label.Add( self.lb_capital, 0, wx.ALL, 5 )
 		
@@ -256,32 +260,40 @@ class FrmEmpresa ( wx.Frame ):
 		
 		lay_campos = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.tc_quotas = wx.TextCtrl( self.pn_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), wx.TE_RIGHT )
+		self.tc_quotas = wx.TextCtrl( self.pn_lista_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), wx.TE_RIGHT )
 		lay_campos.Add( self.tc_quotas, 0, wx.ALL, 5 )
 		
-		self.tc_capital = wx.TextCtrl( self.pn_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), wx.TE_RIGHT )
+		self.tc_capital = wx.TextCtrl( self.pn_lista_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), wx.TE_RIGHT )
 		lay_campos.Add( self.tc_capital, 0, wx.ALL, 5 )
 		
 		
 		lay_total.Add( lay_campos, 1, wx.EXPAND, 5 )
 		
 		
-		lay_socios.Add( lay_total, 0, wx.EXPAND, 5 )
+		bSizer20.Add( lay_total, 0, wx.EXPAND, 5 )
 		
 		lay_tabela = wx.BoxSizer( wx.VERTICAL )
 		
-		self.gd_socios = wx.grid.Grid( self.pn_socios, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.gd_socios = wx.grid.Grid( self.pn_lista_socios, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 		
 		# Grid
-		self.gd_socios.CreateGrid( 5, 5 )
+		self.gd_socios.CreateGrid( 0, 8 )
 		self.gd_socios.EnableEditing( True )
 		self.gd_socios.EnableGridLines( False )
 		self.gd_socios.EnableDragGridSize( False )
 		self.gd_socios.SetMargins( 0, 0 )
 		
 		# Columns
+		self.gd_socios.SetColSize( 0, 50 )
+		self.gd_socios.SetColSize( 1, 50 )
+		self.gd_socios.SetColSize( 2, 90 )
+		self.gd_socios.SetColSize( 3, 400 )
+		self.gd_socios.SetColSize( 4, 120 )
+		self.gd_socios.SetColSize( 5, 100 )
+		self.gd_socios.SetColSize( 6, 100 )
+		self.gd_socios.SetColSize( 7, 100 )
 		self.gd_socios.EnableDragColMove( False )
-		self.gd_socios.EnableDragColSize( True )
+		self.gd_socios.EnableDragColSize( False )
 		self.gd_socios.SetColLabelSize( 30 )
 		self.gd_socios.SetColLabelAlignment( wx.ALIGN_CENTRE, wx.ALIGN_CENTRE )
 		
@@ -294,10 +306,93 @@ class FrmEmpresa ( wx.Frame ):
 		
 		# Cell Defaults
 		self.gd_socios.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		lay_tabela.Add( self.gd_socios, 0, wx.EXPAND, 5 )
+		lay_tabela.Add( self.gd_socios, 1, wx.EXPAND, 5 )
 		
 		
-		lay_socios.Add( lay_tabela, 1, wx.EXPAND, 5 )
+		bSizer20.Add( lay_tabela, 1, wx.EXPAND, 5 )
+		
+		
+		self.pn_lista_socios.SetSizer( bSizer20 )
+		self.pn_lista_socios.Layout()
+		bSizer20.Fit( self.pn_lista_socios )
+		self.m_notebook2.AddPage( self.pn_lista_socios, u"Lista", True )
+		self.pn_form_socios = wx.Panel( self.m_notebook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		lay_form_soc = wx.BoxSizer( wx.HORIZONTAL )
+		
+		lay_label_soc1 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.lb_empresa = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Empresa:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_empresa.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_empresa, 0, wx.ALL, 5 )
+		
+		self.lb_soc_codigo = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Código:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_codigo.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_codigo, 0, wx.ALL, 5 )
+		
+		self.lb_soc_situacao = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Situação:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_situacao.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_situacao, 0, wx.ALL, 5 )
+		
+		self.lb_soc_nome = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Nome do Sócio:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_nome.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_nome, 0, wx.ALL, 5 )
+		
+		self.lc_soc_federal = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Cadastro Federal:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lc_soc_federal.Wrap( -1 )
+		lay_label_soc1.Add( self.lc_soc_federal, 0, wx.ALL, 5 )
+		
+		self.lb_soc_capital = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Capital Integralizado:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_capital.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_capital, 0, wx.ALL, 5 )
+		
+		self.lb_soc_quotas = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Qtde. de Quotas:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_quotas.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_quotas, 0, wx.ALL, 5 )
+		
+		self.lb_soc_vquota = wx.StaticText( self.pn_form_socios, wx.ID_ANY, u"Valor da Quota:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
+		self.lb_soc_vquota.Wrap( -1 )
+		lay_label_soc1.Add( self.lb_soc_vquota, 0, wx.ALL, 5 )
+		
+		
+		lay_form_soc.Add( lay_label_soc1, 0, wx.EXPAND, 5 )
+		
+		lay_text_soc1 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.tc_soc_empresa = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_empresa, 0, wx.ALL, 5 )
+		
+		self.tc_soc_codigo = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_codigo, 0, wx.ALL, 5 )
+		
+		cb_soc_situacaoChoices = [ u"Ativo", u"Análise", u"Bloqueado", u"Saneamento", u"Cancelado" ]
+		self.cb_soc_situacao = wx.ComboBox( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,26 ), cb_soc_situacaoChoices, 0 )
+		lay_text_soc1.Add( self.cb_soc_situacao, 0, wx.ALL, 5 )
+		
+		self.tc_soc_nome = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_nome, 0, wx.ALL, 5 )
+		
+		self.tc_soc_federal = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_federal, 0, wx.ALL, 5 )
+		
+		self.tc_soc_capital = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_capital, 0, wx.ALL, 5 )
+		
+		self.tc_soc_quotas = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_quotas, 0, wx.ALL, 5 )
+		
+		self.tc_soc_vquota = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+		lay_text_soc1.Add( self.tc_soc_vquota, 0, wx.ALL, 5 )
+		
+		
+		lay_form_soc.Add( lay_text_soc1, 1, wx.EXPAND, 5 )
+		
+		
+		self.pn_form_socios.SetSizer( lay_form_soc )
+		self.pn_form_socios.Layout()
+		lay_form_soc.Fit( self.pn_form_socios )
+		self.m_notebook2.AddPage( self.pn_form_socios, u"Formulário", False )
+		
+		lay_socios.Add( self.m_notebook2, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		lay_botao = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -305,16 +400,29 @@ class FrmEmpresa ( wx.Frame ):
 		
 		self.bt_soc_adicionar.SetBitmapDisabled( wx.Bitmap( u"icons/ac_adicionar_16x16_inat.png", wx.BITMAP_TYPE_ANY ) )
 		self.bt_soc_adicionar.SetDefault() 
+		self.bt_soc_adicionar.Enable( False )
+		
 		lay_botao.Add( self.bt_soc_adicionar, 0, wx.ALL, 5 )
 		
 		self.bt_soc_editar = wx.BitmapButton( self.pn_socios, wx.ID_ANY, wx.Bitmap( u"icons/ac_editar_16x16.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, wx.BU_BOTTOM )
 		
 		self.bt_soc_editar.SetBitmapDisabled( wx.Bitmap( u"icons/ac_editar_16x16_inat.png", wx.BITMAP_TYPE_ANY ) )
+		self.bt_soc_editar.Enable( False )
+		
 		lay_botao.Add( self.bt_soc_editar, 0, wx.ALL, 5 )
+		
+		self.bt_soc_excluir = wx.BitmapButton( self.pn_socios, wx.ID_ANY, wx.Bitmap( u"icons/ac_lixeira_16x16.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW )
+		
+		self.bt_soc_excluir.SetBitmapDisabled( wx.Bitmap( u"icons/ac_lixeira_16x16_inat.png", wx.BITMAP_TYPE_ANY ) )
+		self.bt_soc_excluir.Enable( False )
+		
+		lay_botao.Add( self.bt_soc_excluir, 0, wx.ALL, 5 )
 		
 		self.bt_soc_cancelar = wx.BitmapButton( self.pn_socios, wx.ID_ANY, wx.Bitmap( u"icons/ac_cancelar_16x16.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW )
 		
 		self.bt_soc_cancelar.SetBitmapDisabled( wx.Bitmap( u"icons/ac_cancelar_16x16_inat.png", wx.BITMAP_TYPE_ANY ) )
+		self.bt_soc_cancelar.Enable( False )
+		
 		lay_botao.Add( self.bt_soc_cancelar, 0, wx.ALL, 5 )
 		
 		
@@ -338,30 +446,50 @@ class FrmEmpresa ( wx.Frame ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
-		self.Bind( wx.EVT_TOOL, self.emp_adicionar, id = self.bt_adicionar.GetId() )
-		self.Bind( wx.EVT_TOOL, self.emp_editar, id = self.bt_editar.GetId() )
-		self.Bind( wx.EVT_TOOL, self.emp_buscar, id = self.bt_buscar.GetId() )
-		self.Bind( wx.EVT_TOOL, self.emp_confirmar, id = self.bt_confirmar.GetId() )
-		self.Bind( wx.EVT_TOOL, self.emp_cancelar, id = self.bt_cancelar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_buscar, id = self.bt_buscar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_adicionar, id = self.bt_adicionar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_editar, id = self.bt_editar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_confirmar, id = self.bt_confirmar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_cancelar, id = self.bt_cancelar.GetId() )
+		self.Bind( wx.EVT_TOOL, self.ac_sair, id = self.m_tool6.GetId() )
+		self.bt_soc_adicionar.Bind( wx.EVT_BUTTON, self.soc_adicionar )
+		self.bt_soc_editar.Bind( wx.EVT_BUTTON, self.soc_editar )
+		self.bt_soc_excluir.Bind( wx.EVT_BUTTON, self.soc_excluir )
+		self.bt_soc_cancelar.Bind( wx.EVT_BUTTON, self.soc_cancelar )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def emp_adicionar( self, event ):
+	def ac_buscar( self, event ):
 		event.Skip()
 	
-	def emp_editar( self, event ):
+	def ac_adicionar( self, event ):
 		event.Skip()
 	
-	def emp_buscar( self, event ):
+	def ac_editar( self, event ):
 		event.Skip()
 	
-	def emp_confirmar( self, event ):
+	def ac_confirmar( self, event ):
 		event.Skip()
 	
-	def emp_cancelar( self, event ):
+	def ac_cancelar( self, event ):
+		event.Skip()
+	
+	def ac_sair( self, event ):
+		event.Skip()
+	
+	def soc_adicionar( self, event ):
+		event.Skip()
+	
+	def soc_editar( self, event ):
+		event.Skip()
+	
+	def soc_excluir( self, event ):
+		event.Skip()
+	
+	def soc_cancelar( self, event ):
 		event.Skip()
 	
 

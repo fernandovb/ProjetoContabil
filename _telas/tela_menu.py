@@ -1,110 +1,99 @@
 # -*- coding: utf-8 -*- 
 
+###########################################################################
+## Python code generated with wxFormBuilder (version Jun 17 2015)
+## http://www.wxformbuilder.org/
+##
+## PLEASE DO "NOT" EDIT THIS FILE!
+###########################################################################
+
 import wx
 import wx.xrc
 
-at = ['Cadastro', ['Geral', ['Atividade', 'Ocupacao'],
-                   'Controle']]
+###########################################################################
+## Class FrmMenu
+###########################################################################
 
+class FrmMenu ( wx.Frame ):
+	
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Menu Principal", pos = wx.DefaultPosition, size = wx.Size( 883,620 ), style = wx.DEFAULT_FRAME_STYLE|wx.MAXIMIZE|wx.TAB_TRAVERSAL )
+		
+		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		
+		self.MnbMenu = wx.MenuBar( 0 )
+		self.MnSistema = wx.Menu()
+		self.mn_cadastro = wx.Menu()
+		self.mn_dbemp01 = wx.MenuItem( self.mn_cadastro, wx.ID_ANY, u"Empresas", wx.EmptyString, wx.ITEM_NORMAL )
+		self.mn_cadastro.AppendItem( self.mn_dbemp01 )
+		
+		self.mn_prm01 = wx.MenuItem( self.mn_cadastro, wx.ID_ANY, u"Pessoas", wx.EmptyString, wx.ITEM_NORMAL )
+		self.mn_cadastro.AppendItem( self.mn_prm01 )
+		
+		self.MnSistema.AppendSubMenu( self.mn_cadastro, u"Cadastros" )
+		
+		self.MniSair = wx.MenuItem( self.MnSistema, wx.ID_ANY, u"&Sair", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MnSistema.AppendItem( self.MniSair )
+		
+		self.MnbMenu.Append( self.MnSistema, u"Sistema" ) 
+		
+		self.MnSobre = wx.Menu()
+		self.mn_info = wx.MenuItem( self.MnSobre, wx.ID_ANY, u"Sobre o sistema", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MnSobre.AppendItem( self.mn_info )
+		
+		self.MnbMenu.Append( self.MnSobre, u"S&obre" ) 
+		
+		self.SetMenuBar( self.MnbMenu )
+		
+		self.StbMenu = self.CreateStatusBar( 3, 0, wx.ID_ANY )
+		SizPrincipal = wx.BoxSizer( wx.VERTICAL )
+		
+		SizBody = wx.BoxSizer( wx.HORIZONTAL )
+		
+		SizLeft = wx.BoxSizer( wx.HORIZONTAL )
+		
+		SizLeft.SetMinSize( wx.Size( 300,-1 ) ) 
+		self.m_treeCtrl1 = wx.TreeCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TR_DEFAULT_STYLE )
+		SizLeft.Add( self.m_treeCtrl1, 1, wx.EXPAND, 5 )
+		
+		
+		SizBody.Add( SizLeft, 0, wx.EXPAND, 5 )
+		
+		bSizer5 = wx.BoxSizer( wx.VERTICAL )
+		
+		
+		SizBody.Add( bSizer5, 1, wx.EXPAND, 5 )
+		
+		
+		SizPrincipal.Add( SizBody, 1, wx.EXPAND, 5 )
+		
+		
+		self.SetSizer( SizPrincipal )
+		self.Layout()
+		
+		self.Centre( wx.BOTH )
+		
+		# Connect Events
+		self.Bind( wx.EVT_MENU, self.ac_emp01, id = self.mn_dbemp01.GetId() )
+		self.Bind( wx.EVT_MENU, self.ac_prm01, id = self.mn_prm01.GetId() )
+		self.Bind( wx.EVT_MENU, self.on_sair, id = self.MniSair.GetId() )
+		self.Bind( wx.EVT_MENU, self.ac_sobre, id = self.mn_info.GetId() )
+	
+	def __del__( self ):
+		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def ac_emp01( self, event ):
+		event.Skip()
+	
+	def ac_prm01( self, event ):
+		event.Skip()
+	
+	def on_sair( self, event ):
+		event.Skip()
+	
+	def ac_sobre( self, event ):
+		event.Skip()
+	
 
-class MyTree(wx.TreeCtrl):
-
-    def __init__(self, parent, id, position, size, style):
-        wx.TreeCtrl.__init__(self, parent, id, position, size, style)
-        root = self.AddRoot('Transações')
-        self.SetItemData(root, ('key', 'value'))
-        # Inclusão do primeiro nível
-        self.on_preenche_lista(root, at)
-
-        self.Expand(root)
-
-    def on_preenche_lista(self, item, lista):
-        """Lê uma lista de valores, e suas sublistas, para montar uma árvore
-        É necessário a criação de uma lista, com suas sublistas para fazer a montagem.
-        Ao ser invocado, on_preenche_lista incluíra o item que não for uma lista no
-        elemento TreeCtrl.
-
-        :param lista: lista com valores string para preenchimento da árvore
-        :param item: item inicial que as strings serão incluidas
-        """
-        novo_item = item
-        for e in lista:
-            if type(e) is list:
-                self.on_preenche_lista(novo_item, e)
-            else:
-                novo_item = self.AppendItem(item, e)
-
-
-class FrmMenu(wx.Frame):
-
-    def __init__(self, parent):
-        wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=u"Menu Principal", pos=wx.DefaultPosition,
-                          size=wx.Size(883, 620), style=wx.DEFAULT_FRAME_STYLE | wx.MAXIMIZE | wx.TAB_TRAVERSAL)
-        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
-
-        ## Definições do menu suspenso
-        # Menu Sistema. Contém os menus cadastro, sair
-        self.mn_sistema = wx.Menu()
-        # Submenu cadastro e item menu pessoa
-        self.mn_cadastro = wx.Menu()
-        self.mn_pessoa = wx.MenuItem(self.mn_cadastro, wx.ID_ANY, 'Pessoas', 'Cdastro de pessoas')
-        self.mn_empresa = wx.MenuItem(self.mn_cadastro, wx.ID_ANY, 'Empresas', 'Cadastro de empresas')
-        self.mn_cadastro.Append(self.mn_pessoa)
-        self.mn_cadastro.Append(self.mn_empresa)
-        self.mn_sistema.AppendSubMenu(self.mn_cadastro, 'Cadastros')
-        # Item menu 'sair'
-        self.mn_sistema.AppendSeparator()
-        self.mn_sair = self.mn_sistema.Append(wx.ID_EXIT, 'Sair', 'Encerra o sistema')
-        # Menu Sistema. Não contém menus atrelados
-        self.mn_sobre = wx.Menu()
-        # Instacia barra de menus
-        self.menu = wx.MenuBar()
-        # Inclui barra de menu ao formulário
-        self.SetMenuBar(self.menu)
-        # Inclui menus à barra de menus
-        self.menu.Append(self.mn_sistema, 'Sistema')
-        self.menu.Append(self.mn_sobre, 'Sobre')
-
-        # Definições da Barra de Status
-        self.StbMenu = self.CreateStatusBar(3, wx.STB_SIZEGRIP, wx.ID_ANY)
-        self.StbMenu.SetStatusWidths([200, 300, 300])
-        self.StbMenu.SetStatusText('Usuário: ', 0)
-        self.StbMenu.SetStatusText('Status da conexão: ', 1)
-
-        # Definições do Sizer principal (organizador)
-        lay_principal = wx.BoxSizer(wx.VERTICAL)
-
-        lay_body = wx.BoxSizer(wx.HORIZONTAL)
-
-        # Definições do menu TreeCtrl
-        self.TrcTransacoes = MyTree(self, wx.ID_ANY, wx.DefaultPosition, wx.Size(300, -1), wx.TR_HAS_BUTTONS)
-
-        # Definições do Size esquerdo - Exibição de menu TreeView
-        lay_left = wx.BoxSizer(wx.HORIZONTAL)
-        lay_left.Add(self.TrcTransacoes, 0, wx.EXPAND)
-        lay_body.Add(lay_left, 1, wx.EXPAND)
-
-        lay_principal.Add(lay_body, 1, wx.EXPAND)
-
-        self.SetSizer(lay_principal)
-        self.Layout()
-
-        self.Centre(wx.BOTH)
-
-        # Ligação de eventos com objetos
-        self.Bind(wx.EVT_CLOSE, self.on_sair)
-        self.Bind(wx.EVT_MENU, self.cad_pessoas, self.mn_pessoa)
-        self.Bind(wx.EVT_MENU, self.on_sair, self.mn_sair)
-        self.Bind(wx.EVT_MENU, self.cad_empresas, self.mn_empresa)
-
-    def __del__(self):
-        pass
-
-    def on_sair(self, event):
-        event.Skip()
-
-    def cad_pessoas(self, event):
-        event.Skip()
-
-    def cad_empresas(self, event):
-        event.Skip()
