@@ -1,6 +1,5 @@
 import pymysql
 
-
 class Conexao(object):
 
     def on_conectar(self, host='localhost', user='', senha='', db='fvb_db'):
@@ -12,17 +11,17 @@ class Conexao(object):
             self.on_cursor()
             self.cursor.execute(f"SELECT usr_nome FROM sys_usuario WHERE usr_matricula = '{self.user}'")
             self.user_name = self.cursor.fetchone()
-            if not self.user_name == None:
+            if len(self.user_name) > 0:
                 mensagem = 'Conectado em "localhost.fvb_db"'
                 conectado = True
             else:
                 mensagem = 'Usuário não registrado. Entre em contato com o administrador do sistema.'
                 conectado = False
+            self.off_cursor()
         except:
             mensagem = 'Erro ao conectar com o banco de dados!'
             conectado = False
         finally:
-            self.off_cursor()
             return [conectado, mensagem]
 
     def on_encerrar(self):
@@ -35,7 +34,8 @@ class Conexao(object):
         self.cursor = self.conn.cursor()
 
     def off_cursor(self):
-        self.cursor.close()
+        if self.cursor.connection is not None:
+            self.cursor.close()
 
     def commit(self):
         self.conn.commit()

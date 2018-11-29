@@ -3,22 +3,24 @@
 import datetime
 from wx.lib.pubsub import pub
 
-from _telas.tela_login import FrmLogin
+from _telas.desingner.tela_login import FrmLogin
+import _dados.dsulog01 as dados_log
 
 
-class SBLOG01(FrmLogin):
+class SULOG01(FrmLogin):
 
-    def __init__(self, conexao, *args, **kwargs):
-        super(SBLOG01, self).__init__(None, *args, *kwargs)
-        self.conn = conexao
+    def __init__(self, *args, **kwargs):
+        super(SULOG01, self).__init__(None, *args, *kwargs)
 
     def on_cancelar(self, event):
         exit()
 
     def on_login(self, event):
-        conectado = self.conn.on_conectar(self.TxHost.Value, self.TxUser.Value, self.TxSenha.Value,
-                                          self.TxDatabase.Value)
-        if conectado[0]:
+        self.usuario = dados_log.SULOG01(self.TxHost.Value,
+                                         self.TxUser.Value,
+                                         self.TxSenha.Value,
+                                         self.TxDatabase.Value)
+        if self.usuario.conectado[0]:
             pub.sendMessage('frameListener', message='show')
             self.Destroy()
         else:
@@ -27,4 +29,4 @@ class SBLOG01(FrmLogin):
                                      str(datetime.datetime.today().hour) + ':' + \
                                      str(datetime.datetime.today().minute) + ':' + \
                                      str(datetime.datetime.today().second) + ': ' + \
-                                     conectado[1]
+                                     self.usuario.conectado[1]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from _telas.tela_pessoa import FrmPessoa
+from _telas.desingner.tela_pessoa import FrmPessoa
 
 
 class PRM01(FrmPessoa):

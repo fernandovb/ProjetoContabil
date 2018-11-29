@@ -1,0 +1,73 @@
+Este documento contém as ideias básicas que o sistema deverá conter. O que aqui está escrito é um norte a ser seguido
+no desenvolvimento deste sistema, podendo já ter sido, ou não, implementado.
+A cada dia procuro incorporar uma nova função no sistema, visto o início do aprendizado em Python e dificuldade de
+entender e aplicar determinados conceitos da programação orientada a objetos. Para mim é uma batalha diária, aprender e
+aplicar o conhecimento, mas busco forças para vencer a cada dia.
+
+========================================================================================================================
+
+O sistema se dividirá em três partes básicas:
+
+    - Tela: que consiste na parte gráfica e interação do usuário com o sistema. Esta parte do sistema conterá dois
+    arquivos para cada tela, sendo uma o projeto da tela (desenvolvido em WxFormBuilder) e outro com a implementação
+    dos códigos de interação, como ativar e desativar comandos, gerar objetos e enviar objetos para gravação etc;
+
+    - Regras: que consiste na verificação dos dados inseridos, validando as informações. Aqui estarão as regras de
+    negócio propriamente ditas, enviando os dados para o banco de dados somente após as validações. Por exemplo, se um
+    CPF ou CNPJ estiver incorreto o sistema não criará o objeto e devolverá um erro para o usuário, se tudo estiver
+    correto, esta classe enviará os dados para o banco de dados;
+
+    - Dados: consiste no acesso ao banco de dados (servidor de dados). Quando receber as solicitações das classes de
+    regras, fará o envio para o banco de dados e a gravação, não havendo validações dos dados, somente dos acessos ao
+    banco de dados. Por exemplo, se um usuário não tiver permissão para criação de um cadastro (somente consulta) esta
+    parte fará o bloqueio e impedirá que a alteração seja feita.
+
+O termo transações será utilizado para definir um conjunto de classes (tela, regras e dados) que comporão a interface
+de acesso do usuário. A ideia é que o acesso possa ser feito através de um TreeCtrl, como menu de acesso que será
+criado dinamicamente, ou pela invocação do código da transação.
+
+As nomenclaturas das classes que serão utilizadas, se basearão nos pacotes criados, assim algumas siglas serão
+utilizadas antes dos nomes para referenciar tais módulos e falicitar o acesso. Os pacotes que serão criados são:
+
+    - SYS (Dados do Sistema): conterá os módulos de configuração e acesso do sistema, como cadastro de usuários, tela
+    de login, controle de numerações e códigos etc:
+        * SM: System Management, ou Gerenciamento do Sistema, prefixo para transações que possibilitem mudar os
+        parâmetros do sistema;
+        * SU: System User, ou Usuário do Sistema, prefixo para transações que gerenciem, ou invoquem, usuários;
+        * SS: System Services, ou Serviços do Sistema, prefixo para transações que gerem serviços do sistema, como
+        relatórios de erros, serviços de execução de relatórios em background, ou agendamento de execução de transações;
+
+    - SEBD (System Environment Basics Data, ou Dados Básicos do Ambiente de Sistema): conterá os módulos de uso do
+    sistema, possibilitando criação de ambientes que possibilitem o controle de forma independente para cada entidade.
+    Podemos considerar o cadastro de empresas, unidades, atividades, ocupações etc:
+        * ER: Environment Records, ou Cadastros de Ambiente, previsto para transações de manutenção de cadastros;
+
+    - PRM (Gestão de Relacionamento de Pessoas): conterá os módulos de controle de relações de pessoas. Este módulo se
+    baseia no conceito PRM (People Relationship Management, ou Gestão de Relacionamento de Pessoas), que visa incluir
+    não somente os conceitos de CRM (Customer Relationship Management) e SRM (Supplier Relationship Management), mas
+    uma nova gestão do relacionamento entre pessoas da entidade, visando prevenir conflitos de interesses, questões
+    judiciais e trabalhistas, bem como integrar a cadeia de entregas;
+        * PR: People Records, ou Cadastros de Pessoas, prefixo para cadastros relacionados a gestão de pessoas;
+        * PL: People Listing, ou Listagem de Pessoas, prefixo para relatórios relacionados a gestão de pessoas;
+
+    - ACCL (Accounting, ou Contabilidade): conterá o módulo de contabilidade, trazendo uma gestão baseada em fluxos
+    contábeis, com utilização de lançamentos e relatórios contábeis, com utilização de informações complementares que
+    irão possibilitar uma gestão do negócio com a visão contábil.
+        * AR: Accounting Records, ou Registros Contábeis, prefixo para manutenção dos registros contábeis e suas
+        consultas;
+        * AL: Accounting Listin, ou Listagem Contábil, prefixo para relatórios gerenciais contábeis;
+        * AS: Accounting Statements, ou Demonstrações Contábeis, prefixo para demonstrações contábeis de apresentação
+        formal;
+
+    - FMIS (Financial Management Information System): conterá o módulo financeiro, utilizando os recursos contábeis de
+    registro, mas com informações complementares, além de recursos adicionais para facilitar a gestão financeira.
+        * FR: Financial Records, ou Registros Financeiros, prefixo para manutenção de registros financeiros e suas
+        consultas;
+        * FL: Financial Listing, ou Listagem Financeira, prefixo para relatórios financeiros;
+
+    - CLCM (Contract Life Cycle Management): conterá o módulo para gestão de contratos, que fornecerá informações sobre
+    os contratos, como vigência, andamento do contrato, avisos de renovação, faturas ou parcelas geradas, análise pós
+    finalização, recomendações. O módulo controlará tanto contratos de aquisição, como contratos de fornecimento:
+        * CR: Contract Records, ou Registros de Contratos, prefixo para manutenção de registros relacionados a
+        contratos;
+        * CL: Contract Listing, ou Listagem de Contratos, prefixo para relatórios de contratos.

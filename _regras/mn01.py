@@ -3,14 +3,14 @@
 import wx
 import wx.xrc
 from wx.lib.pubsub import pub
-from _telas.tela_menu import FrmMenu
-from _regras.sblog01 import SBLOG01
-from _regras.prm01 import PRM01
-from _regras.dbemp01 import EMP01
-from _dados.conexao import Conexao
+from _telas import *
+from _telas.desingner.tela_menu import FrmMenu
+from _telas.tsulog01 import SULOG01
+import _dados.ssgcon as conexao
 
 at = ['Cadastro', ['Geral', ['Atividade', 'Ocupacao'],
                    'Controle']]
+
 
 class MyTree(wx.TreeCtrl):
 
@@ -44,7 +44,6 @@ class MN01(FrmMenu):
 
     def __init__(self, *args, **kwargs):
         super(MN01, self).__init__(*args, **kwargs)
-
         # Definições do menu TreeCtrl
         self.TrcTransacoes = MyTree(self, wx.ID_ANY, wx.DefaultPosition, wx.Size(300, -1), wx.TR_HAS_BUTTONS)
         #lay_left.Add(self.TrcTransacoes, 0, wx.EXPAND)
@@ -55,28 +54,29 @@ class MN01(FrmMenu):
         self.StbMenu.SetStatusText('Status da conexão: OFF', 1)
 
         pub.subscribe(self.my_listener, 'frameListener')
-        dlg = SBLOG01(conexao=conn)
+        dlg = SULOG01()
         dlg.ShowModal()
 
     def on_sair(self, event):
-        conn.on_encerrar()
+        conexao.conn.on_encerrar()
         exit()
 
     def my_listener(self, message, arg2=None):
-        if not conn.user_name[0] == None:
-            self.StbMenu.SetStatusText(f'Usuário: {conn.user_name[0]}', 0)
+        if not conexao.conn.user_name[0] == None:
+            self.StbMenu.SetStatusText(f'Usuário: {conexao.conn.user_name[0]}', 0)
             self.StbMenu.SetStatusText('Status da conexão: ON', 1)
         self.Show()
 
     def ac_prm01(self, event):
-        p = PRM01(None)
-        p.Show()
+        self.ac_chama_form('ARSLIP01')
+
+    def ac_chama_form(self, tela=''):
+        t = tela.lower() + '.' + tela.upper()
+        exec('frame = ' + t + '(self)')
+        exec('frame.Show()')
 
     def ac_emp01(self, event):
-        p = EMP01(conexao=conn, parent=None)
-        p.Show()
+        self.ac_chama_form('EREMP01')
 
     def ac_sobre(self, event):
-        wx.MessageBox(f'Eu sou uma mensagem, {conn.user}', caption='Olá!!!', style=wx.OK | wx.ICON_INFORMATION)
-
-conn = Conexao()
+        wx.MessageBox(f'Eu sou uma mensagem, {conexao.conn.user}', caption='Olá!!!', style=wx.OK | wx.ICON_INFORMATION)

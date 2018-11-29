@@ -278,7 +278,7 @@ class FrmEmpresa ( wx.Frame ):
 		
 		# Grid
 		self.gd_socios.CreateGrid( 0, 8 )
-		self.gd_socios.EnableEditing( True )
+        self.gd_socios.EnableEditing(False)
 		self.gd_socios.EnableGridLines( False )
 		self.gd_socios.EnableDragGridSize( False )
 		self.gd_socios.SetMargins( 0, 0 )
@@ -359,28 +359,44 @@ class FrmEmpresa ( wx.Frame ):
 		lay_text_soc1 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.tc_soc_empresa = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,26 ), 0 )
+        self.tc_soc_empresa.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_empresa, 0, wx.ALL, 5 )
 		
 		self.tc_soc_codigo = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,26 ), 0 )
+        self.tc_soc_codigo.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_codigo, 0, wx.ALL, 5 )
 		
 		cb_soc_situacaoChoices = [ u"Ativo", u"Análise", u"Bloqueado", u"Saneamento", u"Cancelado" ]
 		self.cb_soc_situacao = wx.ComboBox( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,26 ), cb_soc_situacaoChoices, 0 )
+        self.cb_soc_situacao.Enable(False)
+		
 		lay_text_soc1.Add( self.cb_soc_situacao, 0, wx.ALL, 5 )
 		
 		self.tc_soc_nome = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,26 ), 0 )
+        self.tc_soc_nome.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_nome, 0, wx.ALL, 5 )
 		
 		self.tc_soc_federal = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 200,26 ), 0 )
+        self.tc_soc_federal.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_federal, 0, wx.ALL, 5 )
 		
 		self.tc_soc_capital = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+        self.tc_soc_capital.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_capital, 0, wx.ALL, 5 )
 		
 		self.tc_soc_quotas = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+        self.tc_soc_quotas.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_quotas, 0, wx.ALL, 5 )
 		
 		self.tc_soc_vquota = wx.TextCtrl( self.pn_form_socios, wx.ID_ANY, u"0.00", wx.DefaultPosition, wx.Size( 150,26 ), 0 )
+        self.tc_soc_vquota.Enable(False)
+		
 		lay_text_soc1.Add( self.tc_soc_vquota, 0, wx.ALL, 5 )
 		
 		
@@ -395,6 +411,15 @@ class FrmEmpresa ( wx.Frame ):
 		lay_socios.Add( self.m_notebook2, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		lay_botao = wx.BoxSizer( wx.HORIZONTAL )
+
+        self.bt_soc_consultar = wx.BitmapButton(self.pn_socios, wx.ID_ANY,
+                                                wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY),
+                                                wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+
+        self.bt_soc_consultar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_buscar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
+        self.bt_soc_consultar.Enable(False)
+
+        lay_botao.Add(self.bt_soc_consultar, 0, wx.ALL, 5)
 		
 		self.bt_soc_adicionar = wx.BitmapButton( self.pn_socios, wx.ID_ANY, wx.Bitmap( u"icons/ac_adicionar_16x16.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW )
 		
@@ -417,6 +442,15 @@ class FrmEmpresa ( wx.Frame ):
 		self.bt_soc_excluir.Enable( False )
 		
 		lay_botao.Add( self.bt_soc_excluir, 0, wx.ALL, 5 )
+
+        self.bt_soc_confirmar = wx.BitmapButton(self.pn_socios, wx.ID_ANY,
+                                                wx.Bitmap(u"icons/ac_confirmar_16x16.png", wx.BITMAP_TYPE_ANY),
+                                                wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+
+        self.bt_soc_confirmar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_confirmar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
+        self.bt_soc_confirmar.Enable(False)
+
+        lay_botao.Add(self.bt_soc_confirmar, 0, wx.ALL, 5)
 		
 		self.bt_soc_cancelar = wx.BitmapButton( self.pn_socios, wx.ID_ANY, wx.Bitmap( u"icons/ac_cancelar_16x16.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW )
 		
@@ -452,9 +486,12 @@ class FrmEmpresa ( wx.Frame ):
 		self.Bind( wx.EVT_TOOL, self.ac_confirmar, id = self.bt_confirmar.GetId() )
 		self.Bind( wx.EVT_TOOL, self.ac_cancelar, id = self.bt_cancelar.GetId() )
 		self.Bind( wx.EVT_TOOL, self.ac_sair, id = self.m_tool6.GetId() )
+        self.gd_socios.Bind(wx.EVT_LEFT_DCLICK, self.soc_consultar)
+        self.bt_soc_consultar.Bind(wx.EVT_BUTTON, self.soc_consultar)
 		self.bt_soc_adicionar.Bind( wx.EVT_BUTTON, self.soc_adicionar )
 		self.bt_soc_editar.Bind( wx.EVT_BUTTON, self.soc_editar )
 		self.bt_soc_excluir.Bind( wx.EVT_BUTTON, self.soc_excluir )
+        self.bt_soc_confirmar.Bind(wx.EVT_BUTTON, self.soc_confirmar)
 		self.bt_soc_cancelar.Bind( wx.EVT_BUTTON, self.soc_cancelar )
 	
 	def __del__( self ):
@@ -479,6 +516,10 @@ class FrmEmpresa ( wx.Frame ):
 	
 	def ac_sair( self, event ):
 		event.Skip()
+
+    def soc_consultar(self, event):
+        event.Skip()
+	
 	
 	def soc_adicionar( self, event ):
 		event.Skip()
@@ -488,6 +529,9 @@ class FrmEmpresa ( wx.Frame ):
 	
 	def soc_excluir( self, event ):
 		event.Skip()
+
+    def soc_confirmar(self, event):
+        event.Skip()
 	
 	def soc_cancelar( self, event ):
 		event.Skip()
