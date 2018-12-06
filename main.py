@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import wx.xrc
-from _regras.mn01 import MN01
+from _telas.mn01 import MN01
 
 
 class App(wx.App):

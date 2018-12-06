@@ -47,7 +47,7 @@ class DEREMP01:
                       f"emp_bairro, " \
                       f"emp_municipio, " \
                       f"emp_estado " \
-                      f"FROM dba_empresa WHERE emp_codigo = " + \
+                      f"FROM sebd_eremp WHERE emp_codigo = " + \
                   str(self.codigo)
             conexao.conn.cursor.execute(sql)
             emp_cursor = conexao.conn.cursor.fetchone()
@@ -62,7 +62,7 @@ class DEREMP01:
             self.bairro = str(emp_cursor[7])
             self.municipio = str(emp_cursor[8])
             self.estado = str(emp_cursor[9])
-            sql = f"SELECT * FROM dba_emp_socio WHERE esc_empresa = " + str(self.codigo)
+            sql = f"SELECT * FROM sebd_ersoc WHERE esc_empresa = " + str(self.codigo)
             conexao.conn.cursor.execute(sql)
             soc_cursor = conexao.conn.cursor.fetchall()
             if len(soc_cursor) > 0:
@@ -88,7 +88,7 @@ class DEREMP01:
         self.acao = acao
         try:
             if self.acao == 1:
-                sql = "INSERT INTO dba_empresa (" \
+                sql = "INSERT INTO sebd_eremp (" \
                       "emp_situacao, " \
                       "emp_tipo, " \
                       "emp_nome_formal, " \
@@ -109,7 +109,7 @@ class DEREMP01:
                 sql = sql + "'" + str(self.municipio) + "', "
                 sql = sql + "'" + str(self.estado) + "') "
             elif self.acao == 2:
-                sql = 'UPDATE dba_empresa SET '
+                sql = 'UPDATE sebd_eremp SET '
                 sql = sql + 'emp_tipo = ' + "'" + str(self.tipo) + "', "
                 sql = sql + 'emp_situacao = ' + "'" + str(self.situacao) + "', "
                 sql = sql + 'emp_nome_formal = ' + "'" + str(self.nome_formal) + "', "
@@ -160,7 +160,7 @@ class DERSOC01:
     def ac_gravar(self):
         try:
             if self.acao == 1:
-                sql = "INSERT INTO dba_emp_socio (" \
+                sql = "INSERT INTO sebd_ersoc (" \
                       "esc_empresa, " \
                       "esc_codigo, " \
                       "esc_situacao, " \
@@ -179,7 +179,7 @@ class DERSOC01:
                 sql = sql + "'" + str(self.quotas) + "', "
                 sql = sql + "'" + str(self.val_quotas) + "') "
             elif self.acao == 2:
-                sql = 'UPDATE dba_emp_socio SET '
+                sql = 'UPDATE sebd_ersoc SET '
                 sql = sql + 'esc_situacao = ' + "'" + str(self.situacao) + "', "
                 sql = sql + 'esc_nome = ' + "'" + str(self.nome) + "', "
                 sql = sql + 'esc_federal = ' + "'" + str(self.federal) + "', "

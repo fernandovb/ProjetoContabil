@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from _telas.desingner.tela_empresa import FrmEmpresa
+from _telas.desingner.teremp import TEREMP
 from _regras.reremp01 import REREMP01, RERSOC01
 import wx
 
 
-class EREMP01(FrmEmpresa):
-
-    acao = 0  # 0-Consultar, 1-Inlcuir, 2-Alterar
+class EREMP(TEREMP):
+    acao_emp = 0  # 0-Consultar, 1-Inlcuir, 2-Alterar
+    acao_soc = 0
     situacao = {'Ativo': 1, 'Análise': 2, 'Bloqueado': 3, 'Saneamento': 4, 'Cancelado': 9}
 
     def __init__(self, *args, **kwargs):
-        super(EREMP01, self).__init__(*args, **kwargs)
+        super(EREMP, self).__init__(*args, **kwargs)
         self.tb_geral.EnableTool(wx.ID_FIND, True)
         self.tb_geral.EnableTool(wx.ID_ADD, True)
         self.tb_geral.EnableTool(wx.ID_EDIT, False)
@@ -41,7 +41,7 @@ class EREMP01(FrmEmpresa):
         self.Close()
 
     def ac_buscar(self, event):
-        self.acao = 0
+        self.acao_emp = 0
         try:
             consulta = REREMP01(self.tc_codigo.Value)
             consulta.ac_consultar()
@@ -76,7 +76,7 @@ class EREMP01(FrmEmpresa):
                           caption='Erro', style=wx.OK | wx.ICON_ERROR)
 
     def ac_adicionar(self, event):
-        self.acao = 1
+        self.acao_emp = 1
         self.tb_geral.EnableTool(wx.ID_FIND, False)
         self.tb_geral.EnableTool(wx.ID_ADD, False)
         self.tb_geral.EnableTool(wx.ID_EDIT, False)
@@ -91,7 +91,7 @@ class EREMP01(FrmEmpresa):
         self.on_campos()
 
     def ac_editar(self, event):
-        self.acao = 2
+        self.acao_emp = 2
         self.tb_geral.EnableTool(wx.ID_FIND, False)
         self.tb_geral.EnableTool(wx.ID_ADD, False)
         self.tb_geral.EnableTool(wx.ID_EDIT, False)
@@ -115,35 +115,36 @@ class EREMP01(FrmEmpresa):
                          self.tc_municipio.Value,
                          self.cb_estado.Value)
         grava.lsocios = self.lsocios
-        grava.ac_gravar(self.acao)
+        grava.ac_gravar(self.acao_emp)
         self.tb_geral.EnableTool(wx.ID_FIND, True)
         self.tb_geral.EnableTool(wx.ID_ADD, True)
         self.tb_geral.EnableTool(wx.ID_EDIT, True)
         self.tb_geral.EnableTool(wx.ID_APPLY, False)
         self.tb_geral.EnableTool(wx.ID_ABORT, False)
+        self.acao_emp = 0
         self.off_campos()
 
     def ac_cancelar(self, event):
-        if self.acao == 1:
+        if self.acao_emp == 1:
             self.tb_geral.EnableTool(wx.ID_FIND, True)
             self.tb_geral.EnableTool(wx.ID_ADD, True)
             self.tb_geral.EnableTool(wx.ID_EDIT, False)
             self.tb_geral.EnableTool(wx.ID_APPLY, False)
             self.tb_geral.EnableTool(wx.ID_ABORT, False)
-        elif self.acao == 2:
+        elif self.acao_emp == 2:
             self.tb_geral.EnableTool(wx.ID_FIND, True)
             self.tb_geral.EnableTool(wx.ID_ADD, True)
             self.tb_geral.EnableTool(wx.ID_EDIT, True)
             self.tb_geral.EnableTool(wx.ID_APPLY, False)
             self.tb_geral.EnableTool(wx.ID_ABORT, False)
-        elif self.acao == 0:
+        elif self.acao_emp == 0:
             self.tb_geral.EnableTool(wx.ID_FIND, True)
             self.tb_geral.EnableTool(wx.ID_ADD, True)
             self.tb_geral.EnableTool(wx.ID_EDIT, False)
             self.tb_geral.EnableTool(wx.ID_APPLY, False)
             self.tb_geral.EnableTool(wx.ID_ABORT, False)
             self.limpa_campos()
-        self.acao = 0
+        self.acao_emp = 0
         self.off_campos()
 
     def on_campos(self):
@@ -182,7 +183,10 @@ class EREMP01(FrmEmpresa):
         self.tc_municipio.Value = ''
         self.cb_estado.Value = ''
 
+    # Ações para parte dos sócios
+
     def soc_consultar(self, event):
+        self.acao_soc = 0
         socio = self.lsocios[self.gd_socios.GetGridCursorRow()]
         if socio is not None:
             self.tc_soc_empresa.Value = str(socio.empresa)
@@ -199,9 +203,11 @@ class EREMP01(FrmEmpresa):
             self.bt_soc_excluir.Enable(True)
             self.bt_soc_confirmar.Enable(False)
             self.bt_soc_cancelar.Enable(True)
-            self.m_notebook2.ChangeSelection(1)
+            self.pn_lista_socios.Hide()
+            self.pn_form_socios.Show()
 
     def soc_adicionar(self, event):
+        self.acao_soc = 1
         self.bt_soc_consultar.Enable(False)
         self.bt_soc_adicionar.Enable(False)
         self.bt_soc_editar.Enable(False)
@@ -215,9 +221,11 @@ class EREMP01(FrmEmpresa):
         self.tc_soc_codigo.Value = str(self.gd_socios.GetNumberRows() + 1)
         self.tc_soc_codigo.Enable(False)
         self.cb_soc_situacao.Value = 'Ativo'
-        self.m_notebook2.ChangeSelection(1)
+        self.pn_lista_socios.Hide()
+        self.pn_form_socios.Show()
 
     def soc_editar(self, event):
+        self.acao_soc = 2
         self.bt_soc_consultar.Enable(False)
         self.bt_soc_adicionar.Enable(False)
         self.bt_soc_editar.Enable(False)
@@ -227,10 +235,57 @@ class EREMP01(FrmEmpresa):
         self.soc_on_campos()
 
     def soc_excluir(self, event):
-        pass
+        self.acao_soc = 2
+        self.bt_soc_consultar.Enable(False)
+        self.bt_soc_adicionar.Enable(False)
+        self.bt_soc_editar.Enable(False)
+        self.bt_soc_excluir.Enable(False)
+        self.bt_soc_confirmar.Enable(True)
+        self.bt_soc_cancelar.Enable(True)
+        self.cb_soc_situacao.Value = 'Cancelado'
 
     def soc_confirmar(self, event):
-        pass
+        if self.acao_soc == 1:
+            socio = RERSOC01(int(self.tc_soc_empresa.Value),
+                             int(self.tc_soc_codigo.Value),
+                             int(self.situacao[self.cb_soc_situacao.Value]),
+                             self.tc_soc_nome.Value,
+                             self.tc_soc_federal.Value,
+                             float(self.tc_soc_capital.Value),
+                             float(self.tc_soc_quotas.Value),
+                             float(self.tc_soc_vquota.Value),
+                             self.acao_soc)
+            self.lsocios.append(socio)
+        elif self.acao_soc == 2:
+            codigo = int(self.tc_soc_codigo.Value) - 1
+            self.lsocios[codigo].situacao = int(self.situacao[self.cb_soc_situacao.Value])
+            self.lsocios[codigo].tipo = self.cb_tipo.Value
+            self.lsocios[codigo].nome = self.tc_soc_nome.Value
+            self.lsocios[codigo].federal = self.tc_soc_federal.Value
+            self.lsocios[codigo].capital = float(self.tc_soc_capital.Value)
+            self.lsocios[codigo].quotas = float(self.tc_soc_quotas.Value)
+            self.lsocios[codigo].val_quotas = float(self.tc_soc_vquota.Value)
+            self.lsocios[codigo].acao = self.acao_soc
+        self.soc_atualiza_grade()
+        self.soc_total_capital()
+        self.bt_soc_consultar.Enable(True)
+        self.bt_soc_adicionar.Enable(True)
+        self.bt_soc_editar.Enable(False)
+        self.bt_soc_confirmar.Enable(False)
+        self.bt_soc_excluir.Enable(False)
+        self.bt_soc_cancelar.Enable(False)
+        self.soc_off_campos()
+        self.pn_form_socios.Hide()
+        self.pn_lista_socios.Show()
+        # Abre campos da empresa para edição e ativa os botões
+        if self.acao_emp == 0:
+            self.acao_emp = 2
+            self.tb_geral.EnableTool(wx.ID_FIND, False)
+            self.tb_geral.EnableTool(wx.ID_ADD, False)
+            self.tb_geral.EnableTool(wx.ID_EDIT, False)
+            self.tb_geral.EnableTool(wx.ID_APPLY, True)
+            self.tb_geral.EnableTool(wx.ID_ABORT, True)
+            self.on_campos()
 
     def soc_cancelar(self, event):
         self.bt_soc_consultar.Enable(True)
@@ -240,10 +295,8 @@ class EREMP01(FrmEmpresa):
         self.bt_soc_excluir.Enable(False)
         self.bt_soc_cancelar.Enable(False)
         self.soc_off_campos()
-        self.m_notebook2.ChangeSelection(0)
-
-    def soc_carregar(self):
-        pass
+        self.pn_form_socios.Hide()
+        self.pn_lista_socios.Show()
 
     def soc_atualiza_grade(self):
         for linha in range(self.gd_socios.GetNumberRows()):
@@ -274,8 +327,8 @@ class EREMP01(FrmEmpresa):
         self.tc_soc_vquota.Value = ''
 
     def soc_on_campos(self):
-        self.tc_soc_empresa.Enable(True)
-        self.tc_soc_codigo.Enable(True)
+        # self.tc_soc_empresa.Enable(True)
+        # self.tc_soc_codigo.Enable(True)
         self.cb_soc_situacao.Enable(True)
         self.tc_soc_nome.Enable(True)
         self.tc_soc_federal.Enable(True)
@@ -298,8 +351,9 @@ class EREMP01(FrmEmpresa):
             tot_capital = 0.00
             tot_quotas = 0.00
             for socio in self.lsocios:
-                tot_capital = tot_capital + socio.capital
-                tot_quotas = tot_quotas + socio.quotas
+                if socio.situacao == 1:
+                    tot_capital = tot_capital + socio.capital
+                    tot_quotas = tot_quotas + socio.quotas
             self.tc_capital.Value = str(tot_capital)
             self.tc_quotas.Value = str(tot_capital)
 

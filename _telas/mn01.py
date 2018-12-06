@@ -68,15 +68,22 @@ class MN01(FrmMenu):
         self.Show()
 
     def ac_prm01(self, event):
-        self.ac_chama_form('ARSLIP01')
+        self.ac_chama_form('ARSLC')
+
+    def ac_executar(self, event):
+        self.ac_chama_form(self.tc_executar.Value)
 
     def ac_chama_form(self, tela=''):
-        t = tela.lower() + '.' + tela.upper()
-        exec('frame = ' + t + '(self)')
-        exec('frame.Show()')
+        try:
+            t = tela.lower() + '.' + tela.upper()
+            exec('frame = ' + t + '(self)')
+            exec('frame.Show()')
+        except:
+            self.StbMenu.SetStatusText(f'Erro ao chamar {self.tc_executar.Value}.', 2)
+
 
     def ac_emp01(self, event):
-        self.ac_chama_form('EREMP01')
+        self.ac_chama_form('EREMP')
 
     def ac_sobre(self, event):
         wx.MessageBox(f'Eu sou uma mensagem, {conexao.conn.user}', caption='Olá!!!', style=wx.OK | wx.ICON_INFORMATION)
