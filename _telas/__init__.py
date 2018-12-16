@@ -1,1 +1,3 @@
-__all__ = ['eremp', 'tsulog01', 'arslc']
+from _telas.accl import *
+
+__all__ = ['eremp', 'sulog', 'arslc', 'afcon']

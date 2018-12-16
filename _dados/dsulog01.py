@@ -3,8 +3,7 @@
 import _dados.ssgcon as conexao
 
 
-class SULOG01:
-    global conn
+class DSULOG:
 
-    def __init__(self, host='localhost', user='', senha='', db='fvb_db'):
-        self.conectado = conexao.conn.on_conectar(host=host, user=user, senha=senha, db=db)
+    def __init__(self, host='localhost', user='', senha='', db='fvb_db', emp=0):
+        self.conectado = conexao.conn.on_conectar(host=host, user=user, senha=senha, db=db, emp=int(emp))

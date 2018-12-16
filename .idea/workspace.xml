@@ -2,47 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_telas/arslc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_telas/desingner/tarslc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_dados/accl/dafcon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_dados/deremp02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/accl/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/accl/rafcon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/accl/rarslc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/reremp02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/ssglob.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_telas/accl/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_telas/accl/afcon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_telas/accl/arslc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dados/deremp01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/deremp01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_regras/mn01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/mn01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dados/conexao.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/conexao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dados/dsulog01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/dsulog01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dados/ssgcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/ssgcon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_regras/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_telas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/arslip01.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/ACCL_ARSLIP.fbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaEmpresa.fbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaSlipContabil.fbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/arslip.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_empresa.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tela_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/eremp01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/eremp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_adicionar_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_adicionar_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_adicionar_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_adicionar_32x32_ft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_buscar_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_buscar_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_buscar_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_cancelar_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_cancelar_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_cancelar_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_confirmar_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_confirmar_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_confirmar_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_editar_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_editar_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_editar_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_lixeira_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_lixeira_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_lixeira_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_sair_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_sair_16x16_inat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/icons/ac_sair_32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/tela_menu_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/arslc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaLogin.fbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/tarslc.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tarslc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/eremp.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/eremp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/mn01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/mn01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/tsulog01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/sulog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contabilidade/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/accl/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contabilidade/contabil.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contabilidade/menu_texto.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_000f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_001d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_002d" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,49 +42,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_telas/eremp.py">
+        <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_telas/desingner/teremp01.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_telas/mn01.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_telas/arslc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="476">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
               <folding>
-                <element signature="e#25#67#0" expanded="true" />
+                <element signature="e#25#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_regras/accl/rarslc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+              <folding>
+                <element signature="e#25#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_telas/__init__.py">
+        <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="17">
+              <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_dados/deremp01.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2243">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -112,7 +95,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>statub</find>
-      <find>stb</find>
       <find>bt</find>
       <find>tb_gera</find>
       <find>kwargs</find>
@@ -125,9 +107,22 @@
       <find>val_quot</find>
       <find>SOC01</find>
       <find>dbemp01</find>
-      <find>conexao</find>
       <find>muda_campos</find>
       <find>exit</find>
+      <find>sb_</find>
+      <find>status</find>
+      <find>stb</find>
+      <find>conexao</find>
+      <find>self.c_dados</find>
+      <find>atualiza</find>
+      <find>datem</find>
+      <find>tc_chave_registro</find>
+      <find>setcel</find>
+      <find>setcell</find>
+      <find>gd</find>
+      <find>bt_localizar</find>
+      <find>atuali</find>
+      <find>acao_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,14 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/telas/cad_pessoas.py" />
-        <option value="$PROJECT_DIR$/dados/conexao.py" />
-        <option value="$PROJECT_DIR$/telas/tela_pessoa.py" />
-        <option value="$PROJECT_DIR$/telas/tela_menu.py" />
-        <option value="$PROJECT_DIR$/telas/tl_login.py" />
-        <option value="$PROJECT_DIR$/telas/tela_login.py" />
-        <option value="$PROJECT_DIR$/telas/tela_empresa.py" />
-        <option value="$PROJECT_DIR$/_regras/prm01.py" />
         <option value="$PROJECT_DIR$/_telas/tela_menu.py" />
         <option value="$PROJECT_DIR$/_telas/tela_empresa.py" />
         <option value="$PROJECT_DIR$/_telas/tela_pessoa.py" />
@@ -157,7 +144,6 @@
         <option value="$PROJECT_DIR$/_regras/EREMP01.py" />
         <option value="$PROJECT_DIR$/_dados/DEREMP01.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/_dados/conexao.py" />
         <option value="$PROJECT_DIR$/_dados/SSGCON.py" />
         <option value="$PROJECT_DIR$/_dados/DSULOG01.py" />
         <option value="$PROJECT_DIR$/_regras/sblog01.py" />
@@ -169,28 +155,52 @@
         <option value="$PROJECT_DIR$/_telas/arslip.PY" />
         <option value="$PROJECT_DIR$/_telas/arslip.py" />
         <option value="$PROJECT_DIR$/_regras/reremp01.py" />
-        <option value="$PROJECT_DIR$/_telas/arslc.py" />
         <option value="$PROJECT_DIR$/_regras/mn01.py" />
         <option value="$PROJECT_DIR$/_telas/eremp01.py" />
         <option value="$PROJECT_DIR$/_telas/desingner/teremp01.py" />
         <option value="$PROJECT_DIR$/_dados/deremp01.py" />
-        <option value="$PROJECT_DIR$/_telas/mn01.py" />
         <option value="$PROJECT_DIR$/_telas/desingner/tela_menu.py" />
+        <option value="$PROJECT_DIR$/_telas/tsulog01.py" />
+        <option value="$PROJECT_DIR$/_regras/reemp02.py" />
+        <option value="$PROJECT_DIR$/_regras/reremp02.py" />
+        <option value="$PROJECT_DIR$/_dados/deremp02.py" />
+        <option value="$PROJECT_DIR$/_dados/ssgcon.py" />
+        <option value="$PROJECT_DIR$/_telas/mn01.py" />
+        <option value="$PROJECT_DIR$/_dados/dsulog01.py" />
+        <option value="$PROJECT_DIR$/_regras/ssglob.py" />
         <option value="$PROJECT_DIR$/_telas/eremp.py" />
+        <option value="$PROJECT_DIR$/_telas/sulog.py" />
+        <option value="$PROJECT_DIR$/_regras/rarslc.py" />
+        <option value="$PROJECT_DIR$/_regras/ssfind.py" />
+        <option value="$PROJECT_DIR$/_dados/dssfind.py" />
+        <option value="$PROJECT_DIR$/_telas/alccon.py" />
+        <option value="$PROJECT_DIR$/_dados/dafcon.py" />
+        <option value="$PROJECT_DIR$/_regras/rafcon.py" />
+        <option value="$PROJECT_DIR$/_telas/afcon.py" />
+        <option value="$PROJECT_DIR$/_telas/arslc.py" />
         <option value="$PROJECT_DIR$/_telas/__init__.py" />
+        <option value="$PROJECT_DIR$/_dados/accl/__init__.py" />
+        <option value="$PROJECT_DIR$/_regras/__init__.py" />
+        <option value="$PROJECT_DIR$/_regras/accl/__init__.py" />
+        <option value="$PROJECT_DIR$/_telas/accl/__init__.py" />
+        <option value="$PROJECT_DIR$/_dados/conexao.py" />
+        <option value="$PROJECT_DIR$/_regras/accl/rarslc.py" />
+        <option value="$PROJECT_DIR$/_telas/accl/arslc.py" />
+        <option value="$PROJECT_DIR$/_dados/accl/darslc.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,26 +216,46 @@
             <path>
               <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
+              <item name="_dados" type="462c0819:PsiDirectoryNode" />
+              <item name="accl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
               <item name="_regras" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
+              <item name="_regras" type="462c0819:PsiDirectoryNode" />
+              <item name="accl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
               <item name="_telas" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
+              <item name="_telas" type="462c0819:PsiDirectoryNode" />
+              <item name="accl" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_telas/desingner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_dados/accl" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ProjetoContabil\_dados\accl" />
+      <recent name="C:\ProjetoContabil\_regras\accl" />
+      <recent name="C:\ProjetoContabil\_telas\accl" />
       <recent name="C:\ProjetoContabil\_telas" />
       <recent name="C:\ProjetoContabil\_telas\desingner" />
     </key>
@@ -381,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541532092315</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Inclusão de TextCtrl no menu para digitar o nome da tela a ser acessada">
+      <created>1544063363108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544063363108</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -397,12 +434,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1956378" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17977528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -418,12 +455,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.101784535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1956378" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,8 +468,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49966952" weight="0.4680851" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49966952" weight="0.4036827" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -441,7 +479,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções." />
     <MESSAGE value="Separação do módulo de tela dos módulos de regras e dados.&#10;Alteração de wx.Notebook para adoção de wx.Panel direto no wx.Sizer, possibilitando o ocultamento das guias e utilização de controles próprios para mudança de tela." />
-    <option name="LAST_COMMIT_MESSAGE" value="Separação do módulo de tela dos módulos de regras e dados.&#10;Alteração de wx.Notebook para adoção de wx.Panel direto no wx.Sizer, possibilitando o ocultamento das guias e utilização de controles próprios para mudança de tela." />
+    <MESSAGE value="Inclusão de TextCtrl no menu para digitar o nome da tela a ser acessada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inclusão de TextCtrl no menu para digitar o nome da tela a ser acessada" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -456,27 +495,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tela.py" />
-    <entry file="file://$PROJECT_DIR$/telas/cad_pessoas.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/wx/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1967916687/wx/_core/EvtHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dados/conexao.py" />
-    <entry file="file://$PROJECT_DIR$/telas/tela_pessoa.py" />
-    <entry file="file://$PROJECT_DIR$/telas/tela_menu.py" />
-    <entry file="file://$PROJECT_DIR$/telas/tl_login.py" />
-    <entry file="file://$PROJECT_DIR$/telas/tela_login.py" />
     <entry file="file://$PROJECT_DIR$/telas/tela_empresa.py" />
     <entry file="file://$PROJECT_DIR$/_telas/tela_empresaFrmEmpresa.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1967916687/wx/_core/Frame.py">
@@ -500,9 +518,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_login.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_login.py" />
     <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_pessoa.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -521,39 +537,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/ssgcon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_regras/sblog01.py" />
-    <entry file="file://$PROJECT_DIR$/_dados/dsulog01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/tsulog01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/conexao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_telas/tela_menu_old.py" />
-    <entry file="file://$PROJECT_DIR$/_regras/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/wx/xrc.pyi">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -569,6 +554,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/ACCL_ARSLC.fbp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/teremp01.py" />
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="65" column="40" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/reremp02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -576,79 +579,201 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/ACCL_ARSLC.fbp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/_telas/desingner/tarslc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="395">
+          <caret line="423" column="8" selection-start-line="423" selection-start-column="8" selection-end-line="423" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/deremp01.py">
+    <entry file="file://$PROJECT_DIR$/_dados/dsulog01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_regras/reremp01.py">
+    <entry file="file://$PROJECT_DIR$/_telas/tela_menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
+        <state relative-caret-position="-64" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/descrição.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
+        <state relative-caret-position="-61">
           <caret line="39" column="10" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/arslc.py">
+    <entry file="file://$PROJECT_DIR$/_regras/ssglob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pubsub/pub.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/sulog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/talccon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="117" column="64" selection-start-line="117" selection-start-column="64" selection-end-line="117" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/deremp02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="1" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/accl/rafcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1967916687/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="3668" column="8" selection-start-line="3668" selection-start-column="8" selection-end-line="3668" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/accl/afcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="32" column="55" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="55" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/accl/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/accl/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/mn01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/dafcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/eremp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding>
             <element signature="e#25#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_menu.py">
+    <entry file="file://$PROJECT_DIR$/_regras/reremp01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="-799">
+          <caret line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/mn01.py">
+    <entry file="file://$PROJECT_DIR$/_dados/conexao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/teremp01.py">
+    <entry file="file://$PROJECT_DIR$/_dados/ssgcon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="136">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/eremp.py">
+    <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="476">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/__init__.py">
+    <entry file="file://$PROJECT_DIR$/_regras/accl/rarslc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        <state relative-caret-position="527">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/deremp01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2243">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
         </state>
       </provider>
     </entry>

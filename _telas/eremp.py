@@ -17,16 +17,6 @@ class EREMP(TEREMP):
         self.tb_geral.EnableTool(wx.ID_EDIT, False)
         self.tb_geral.EnableTool(wx.ID_APPLY, False)
         self.tb_geral.EnableTool(wx.ID_ABORT, False)
-        self.c_dados = {'emp_codigo': '',
-                        'emp_situacao': '',
-                        'emp_tipo': '',
-                        'emp_nome_formal': '',
-                        'emp_nome_alternativo': '',
-                        'emp_logradouro': '',
-                        'emp_numero': '',
-                        'emp_bairro': '',
-                        'emp_municipio': '',
-                        'emp_estado': ''}
         self.lsocios = []
         self.gd_socios.SetColLabelValue(0, 'Empresa')
         self.gd_socios.SetColLabelValue(1, 'Codigo')

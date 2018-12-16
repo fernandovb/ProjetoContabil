@@ -5,8 +5,9 @@ import wx.xrc
 from wx.lib.pubsub import pub
 from _telas import *
 from _telas.desingner.tela_menu import FrmMenu
-from _telas.tsulog01 import SULOG01
+from _telas.sulog import SULOG
 import _dados.ssgcon as conexao
+import _regras.ssglob as ssglob
 
 at = ['Cadastro', ['Geral', ['Atividade', 'Ocupacao'],
                    'Controle']]
@@ -20,7 +21,6 @@ class MyTree(wx.TreeCtrl):
         self.SetItemData(root, ('key', 'value'))
         # Inclusão do primeiro nível
         self.on_preenche_lista(root, at)
-
         self.Expand(root)
 
     def on_preenche_lista(self, item, lista):
@@ -46,15 +46,14 @@ class MN01(FrmMenu):
         super(MN01, self).__init__(*args, **kwargs)
         # Definições do menu TreeCtrl
         self.TrcTransacoes = MyTree(self, wx.ID_ANY, wx.DefaultPosition, wx.Size(300, -1), wx.TR_HAS_BUTTONS)
-        #lay_left.Add(self.TrcTransacoes, 0, wx.EXPAND)
-
         # Definições da Barra de Status
         self.StbMenu.SetStatusWidths([200, 300, 300])
         self.StbMenu.SetStatusText('Usuário:', 0)
         self.StbMenu.SetStatusText('Status da conexão: OFF', 1)
-
+        self.StbMenu.SetStatusText(f'Empresa: ', 2)
         pub.subscribe(self.my_listener, 'frameListener')
-        dlg = SULOG01()
+        credencial = ssglob.SSGLOB()
+        dlg = SULOG()
         dlg.ShowModal()
 
     def on_sair(self, event):
@@ -63,8 +62,9 @@ class MN01(FrmMenu):
 
     def my_listener(self, message, arg2=None):
         if not conexao.conn.user_name[0] == None:
-            self.StbMenu.SetStatusText(f'Usuário: {conexao.conn.user_name[0]}', 0)
+            self.StbMenu.SetStatusText(f'Usuário: {ssglob.SSGLOB.nome_user}', 0)
             self.StbMenu.SetStatusText('Status da conexão: ON', 1)
+            self.StbMenu.SetStatusText(f'Empresa: {ssglob.SSGLOB.nome_emp}', 2)
         self.Show()
 
     def ac_prm01(self, event):

@@ -7,6 +7,3 @@ conn = Conexao()
 
 class Login:
     global conn
-
-    def conectar(self):
-        pass
