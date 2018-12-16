@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_dados/accl/dafcon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_dados/deremp02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/accl/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/accl/rafcon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/accl/rarslc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/reremp02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/ssglob.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_telas/accl/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_telas/accl/afcon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_telas/accl/arslc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dados/conexao.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/conexao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dados/dsulog01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/dsulog01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dados/ssgcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/ssgcon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_regras/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/arslc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaLogin.fbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tarslc.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tarslc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/eremp.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/eremp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/mn01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/mn01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/tsulog01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/sulog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contabilidade/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/accl/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contabilidade/contabil.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contabilidade/menu_texto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/diagramas/Contabilidade.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramas/Contabilidade.vpp.bak_002d" beforeDir="false" />
-    </list>
+    <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+              <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
               <folding>
                 <element signature="e#25#34#0" expanded="true" />
               </folding>
@@ -68,7 +37,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1564">
               <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
             </state>
           </provider>
@@ -418,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544063363108</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Inclusão de tela de lançamento contábil, com validação e gravação de partidas. Falta a consulta dos lançamentos.&#10;Também foi criado pastas accl (contabilidade) nas bibliotecas _telas, _dados e _regras.">
+      <created>1544991702308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544991702308</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -432,14 +408,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17977528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17977528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -480,7 +455,8 @@
     <MESSAGE value="Organização de código e implementação de classes intermediárias de regras para chamar os formulários e aplicar as funções." />
     <MESSAGE value="Separação do módulo de tela dos módulos de regras e dados.&#10;Alteração de wx.Notebook para adoção de wx.Panel direto no wx.Sizer, possibilitando o ocultamento das guias e utilização de controles próprios para mudança de tela." />
     <MESSAGE value="Inclusão de TextCtrl no menu para digitar o nome da tela a ser acessada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inclusão de TextCtrl no menu para digitar o nome da tela a ser acessada" />
+    <MESSAGE value="Inclusão de tela de lançamento contábil, com validação e gravação de partidas. Falta a consulta dos lançamentos.&#10;Também foi criado pastas accl (contabilidade) nas bibliotecas _telas, _dados e _regras." />
+    <option name="LAST_COMMIT_MESSAGE" value="Inclusão de tela de lançamento contábil, com validação e gravação de partidas. Falta a consulta dos lançamentos.&#10;Também foi criado pastas accl (contabilidade) nas bibliotecas _telas, _dados e _regras." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -746,7 +722,7 @@
     <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
           <folding>
             <element signature="e#25#34#0" expanded="true" />
           </folding>
@@ -772,7 +748,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1564">
           <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
         </state>
       </provider>
