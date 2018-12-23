@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from _dados.deremp02 import DEREMP02
+from _dados.sebd.deremp02 import DEREMP02
 
 
 class REREMP02:

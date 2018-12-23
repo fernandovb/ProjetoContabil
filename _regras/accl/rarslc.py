@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import _regras.ssglob as ssglob
+import _regras.sys.ssglob as ssglob
 from datetime import datetime
 from _dados.accl.darslc import DARSLC, DARSLD
 

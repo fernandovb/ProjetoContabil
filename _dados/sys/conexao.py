@@ -1,5 +1,5 @@
 import pymysql
-import _regras.ssglob as ssglob
+import _regras.sys.ssglob as ssglob
 
 class Conexao(object):
 

@@ -4,7 +4,7 @@ import wx
 from datetime import datetime
 from _telas.desingner.tarslc import TARSLC
 from _telas.accl.afcon import AFCON
-import _regras.ssglob as ssglob
+import _regras.sys.ssglob as ssglob
 from _regras.accl.rarslc import RARSLC, RARSLD
 
 

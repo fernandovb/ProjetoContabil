@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from _telas.desingner.teremp import TEREMP
-from _regras.reremp01 import REREMP01, RERSOC01
+from _regras.sebd.reremp01 import REREMP01, RERSOC01
 import wx
 
 

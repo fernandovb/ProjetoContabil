@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import _dados.ssgcon as conexao
+import _dados.sys.ssgcon as conexao
 
 
 class DSULOG:

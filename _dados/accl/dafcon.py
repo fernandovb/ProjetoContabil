@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import _dados.ssgcon as conexao
-import _regras.ssglob as ssglob
+import _dados.sys.ssgcon as conexao
 
 
 class DAFCON:
 
-    def __init__(self, empresa='', codigo='', descricao=''):
+    def __init__(self, empresa='', codigo='', descricao='', ordem=''):
         self.empresa = empresa
         self.conta = codigo
         self.nome = descricao
+        self.ordem = ordem
 
     def fc_buscar(self):
         try:
@@ -20,7 +20,11 @@ class DAFCON:
                 if sql != '':
                     sql = sql + ' AND '
                 sql = sql + "arpc_nome LIKE '%" + self.nome + "%'"
-            sql = 'SELECT arpc_codigo, arpc_nome FROM accl_arpc WHERE ' + sql
+            if self.ordem != '':
+                if sql != '':
+                    sql = sql + ' AND '
+                sql = sql + "arpc_ordem LIKE '%" + self.ordem + "%'"
+            sql = 'SELECT arpc_codigo, arpc_nome, arpc_ordem FROM accl_arpc WHERE ' + sql
             conexao.conn.on_cursor()
             conexao.conn.cursor.execute(sql)
             dados = conexao.conn.cursor.fetchall()

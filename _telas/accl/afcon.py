@@ -2,7 +2,7 @@
 
 from _telas.desingner.tafcon import TAFCON
 from _regras.accl.rafcon import RAFCON
-import _regras.ssglob as ssglob
+import _regras.sys.ssglob as ssglob
 
 
 class AFCON(TAFCON):
@@ -33,7 +33,10 @@ class AFCON(TAFCON):
     def fc_busca(self):
         if self.gd_resultado.GetNumberRows() > 0:
             self.fc_limpa_tabela()
-        busca = RAFCON(ssglob.SSGLOB.empresa, self.tc_conta_contabil.Value, self.tc_descricao.Value)
+        busca = RAFCON(ssglob.SSGLOB.empresa,
+                       self.tc_conta_contabil.Value,
+                       self.tc_descricao.Value,
+                       self.tc_ordem.Value)
         dados = busca.fc_buscar()
         if dados is not None:
             line = 0
@@ -41,6 +44,7 @@ class AFCON(TAFCON):
                 self.gd_resultado.AppendRows(1)
                 self.gd_resultado.SetCellValue(line, 0, str(i[0]))
                 self.gd_resultado.SetCellValue(line, 1, str(i[1]))
+                self.gd_resultado.SetCellValue(line, 2, str(i[2]))
                 line += 1
 
     def fc_limpa_tabela(self):

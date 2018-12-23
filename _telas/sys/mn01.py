@@ -3,11 +3,11 @@
 import wx
 import wx.xrc
 from wx.lib.pubsub import pub
-from _telas import *
 from _telas.desingner.tela_menu import FrmMenu
-from _telas.sulog import SULOG
-import _dados.ssgcon as conexao
-import _regras.ssglob as ssglob
+from _telas.sys.sulog import SULOG
+from _telas import *
+import _dados.sys.ssgcon as conexao
+import _regras.sys.ssglob as ssglob
 
 at = ['Cadastro', ['Geral', ['Atividade', 'Ocupacao'],
                    'Controle']]
@@ -62,9 +62,9 @@ class MN01(FrmMenu):
 
     def my_listener(self, message, arg2=None):
         if not conexao.conn.user_name[0] == None:
-            self.StbMenu.SetStatusText(f'Usuário: {ssglob.SSGLOB.nome_user}', 0)
+            self.StbMenu.SetStatusText(f'Usuário: { ssglob.SSGLOB.nome_user}', 0)
             self.StbMenu.SetStatusText('Status da conexão: ON', 1)
-            self.StbMenu.SetStatusText(f'Empresa: {ssglob.SSGLOB.nome_emp}', 2)
+            self.StbMenu.SetStatusText(f'Empresa: { ssglob.SSGLOB.nome_emp}', 2)
         self.Show()
 
     def ac_prm01(self, event):

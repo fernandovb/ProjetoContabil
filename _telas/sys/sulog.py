@@ -4,7 +4,7 @@ from datetime import datetime
 from wx.lib.pubsub import pub
 
 from _telas.desingner.tsulog import TSULOG
-import _dados.dsulog01 as dados_log
+import _dados.sys.dsulog01 as dados_log
 
 
 class SULOG(TSULOG):

@@ -18,7 +18,8 @@ import wx.grid
 class TAFCON ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Procurar conta", pos = wx.DefaultPosition, size = wx.Size( 500,400 ), style = wx.DEFAULT_DIALOG_STYLE )
+        wx.Dialog.__init__(self, parent, id=wx.ID_ANY, title=u"Procurar conta", pos=wx.DefaultPosition,
+                           size=wx.Size(636, 400), style=wx.DEFAULT_DIALOG_STYLE)
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -35,7 +36,7 @@ class TAFCON ( wx.Dialog ):
 		self.gd_resultado = wx.grid.Grid( self.pn_lista, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 		
 		# Grid
-		self.gd_resultado.CreateGrid( 0, 2 )
+        self.gd_resultado.CreateGrid(0, 3)
 		self.gd_resultado.EnableEditing( False )
 		self.gd_resultado.EnableGridLines( False )
 		self.gd_resultado.EnableDragGridSize( False )
@@ -44,11 +45,13 @@ class TAFCON ( wx.Dialog ):
 		# Columns
 		self.gd_resultado.SetColSize( 0, 90 )
 		self.gd_resultado.SetColSize( 1, 310 )
+        self.gd_resultado.SetColSize(2, 150)
 		self.gd_resultado.EnableDragColMove( False )
 		self.gd_resultado.EnableDragColSize( True )
 		self.gd_resultado.SetColLabelSize( 30 )
 		self.gd_resultado.SetColLabelValue( 0, u"CÓDIGO" )
 		self.gd_resultado.SetColLabelValue( 1, u"DESCRIÇÃO" )
+        self.gd_resultado.SetColLabelValue(2, u"ORDEM")
 		self.gd_resultado.SetColLabelAlignment( wx.ALIGN_CENTRE, wx.ALIGN_CENTRE )
 		
 		# Rows
@@ -82,6 +85,11 @@ class TAFCON ( wx.Dialog ):
 		self.lb_descricao = wx.StaticText( self.pn_dados, wx.ID_ANY, u"Nome da conta:", wx.DefaultPosition, wx.Size( 150,26 ), wx.ALIGN_RIGHT )
 		self.lb_descricao.Wrap( -1 )
 		lay_titulos.Add( self.lb_descricao, 0, wx.ALL, 5 )
+
+        self.lb_ordem = wx.StaticText(self.pn_dados, wx.ID_ANY, u"Ordem:", wx.DefaultPosition, wx.Size(150, 26),
+                                      wx.ALIGN_RIGHT)
+        self.lb_ordem.Wrap(-1)
+        lay_titulos.Add(self.lb_ordem, 0, wx.ALL, 5)
 		
 		
 		lay_dados.Add( lay_titulos, 0, wx.EXPAND, 5 )
@@ -93,6 +101,9 @@ class TAFCON ( wx.Dialog ):
 		
 		self.tc_descricao = wx.TextCtrl( self.pn_dados, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 300,26 ), 0 )
 		lay_campos.Add( self.tc_descricao, 0, wx.ALL, 5 )
+
+        self.tc_ordem = wx.TextCtrl(self.pn_dados, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(150, 26), 0)
+        lay_campos.Add(self.tc_ordem, 0, wx.ALL, 5)
 		
 		
 		lay_dados.Add( lay_campos, 1, wx.EXPAND, 5 )
