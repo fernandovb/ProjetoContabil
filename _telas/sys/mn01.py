@@ -70,6 +70,10 @@ class MN01(FrmMenu):
     def ac_prm01(self, event):
         self.ac_chama_form('ARSLC')
 
+    def ac_crctm(self, event):
+        t = crctm.CRCTM(self)
+        t.Show()
+
     def ac_executar(self, event):
         self.ac_chama_form(self.tc_executar.Value)
 

@@ -1,1 +1,1 @@
-__all__ = ['conexao', 'dsulog01', 'ssgcon']
+__all__ = ['dsulog01', 'ssgcon']

@@ -8,7 +8,7 @@ import wx
 class EREMP(TEREMP):
     acao_emp = 0  # 0-Consultar, 1-Inlcuir, 2-Alterar
     acao_soc = 0
-    situacao = {'Ativo': 1, 'Análise': 2, 'Bloqueado': 3, 'Saneamento': 4, 'Cancelado': 9}
+    situacao = {'Ativo': 1, 'Análise': 2, 'Bloqueado': 3, 'Saneamento': 4, 'Encerrado': 5, 'Cancelado': 9}
 
     def __init__(self, *args, **kwargs):
         super(EREMP, self).__init__(*args, **kwargs)

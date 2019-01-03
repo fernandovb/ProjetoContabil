@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import _regras.sys.ssglob as ssglob
-from datetime import datetime
+from datetime import datetime, date
+from dateutil.parser import parse
 from _dados.accl.darslc import DARSLC, DARSLD
 
 

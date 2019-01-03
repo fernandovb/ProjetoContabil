@@ -2,6 +2,7 @@
 
 import wx
 from datetime import datetime
+from dateutil.parser import parse
 from _telas.desingner.tarslc import TARSLC
 from _telas.accl.afcon import AFCON
 import _regras.sys.ssglob as ssglob
@@ -26,8 +27,8 @@ class ARSLC(TARSLC):
         agora = datetime.today()
         self.acao = 0
         self.fc_desativa_campos_cabecalho()
-        self.tc_dt_criacao.Value = agora.strftime('%Y-%m-%d')
-        self.tc_dt_movimento.Value = agora.strftime('%Y-%m-%d')
+        self.tc_dt_criacao.Value = agora.strftime('%d/%m/%Y')
+        self.tc_dt_movimento.Value = agora.strftime('%d/%m/%Y')
         self.tc_empresa.Value = str(ssglob.SSGLOB.empresa)
         self.tc_periodo.Value = str(ssglob.SSGLOB.periodo)
         self.tc_exercicio.Value = str(ssglob.SSGLOB.exercicio)

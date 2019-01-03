@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Jun 17 2015)
+## Python code generated with wxFormBuilder (version Oct 26 2018)
 ## http://www.wxformbuilder.org/
 ##
-## PLEASE DO "NOT" EDIT THIS FILE!
+## PLEASE DO *NOT* EDIT THIS FILE!
 ###########################################################################
 
 import wx
@@ -19,9 +19,9 @@ class TARSLC(wx.Frame):
 
     def __init__(self, parent):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=u"Lançamento Contábil", pos=wx.DefaultPosition,
-                          size=wx.Size(900, 537), style=wx.DEFAULT_FRAME_STYLE | wx.STATIC_BORDER)
+                          size=wx.Size(900, 537), style=wx.DEFAULT_FRAME_STYLE | wx.BORDER_STATIC)
 
-        self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
         self.tb_slip = self.CreateToolBar(wx.TB_HORIZONTAL, wx.ID_ANY)
         self.bt_reg_adicionar = self.tb_slip.AddLabelTool(wx.ID_ADD, u"Novo lançamento",
@@ -61,7 +61,7 @@ class TARSLC(wx.Frame):
 
         lay_slip = wx.BoxSizer(wx.VERTICAL)
 
-        self.pn_cabecalho = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.STATIC_BORDER)
+        self.pn_cabecalho = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.BORDER_STATIC)
         lay_cabecalho = wx.BoxSizer(wx.HORIZONTAL)
 
         lay_cabec_rotulo_01 = wx.BoxSizer(wx.VERTICAL)
@@ -69,21 +69,25 @@ class TARSLC(wx.Frame):
         self.lb_empresa = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Empresa:", wx.DefaultPosition, wx.Size(150, 26),
                                         wx.ALIGN_RIGHT)
         self.lb_empresa.Wrap(-1)
+
         lay_cabec_rotulo_01.Add(self.lb_empresa, 0, wx.ALL, 5)
 
         self.lb_documento = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Número lançamento:", wx.DefaultPosition,
                                           wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_documento.Wrap(-1)
+
         lay_cabec_rotulo_01.Add(self.lb_documento, 0, wx.ALL, 5)
 
         self.lb_dt_criacao = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Criado em:", wx.DefaultPosition,
                                            wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_dt_criacao.Wrap(-1)
+
         lay_cabec_rotulo_01.Add(self.lb_dt_criacao, 0, wx.ALL, 5)
 
         self.lb_dt_movimento = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Data do movimento:", wx.DefaultPosition,
                                              wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_dt_movimento.Wrap(-1)
+
         lay_cabec_rotulo_01.Add(self.lb_dt_movimento, 0, wx.ALL, 5)
 
         lay_cabecalho.Add(lay_cabec_rotulo_01, 0, wx.EXPAND, 5)
@@ -121,21 +125,25 @@ class TARSLC(wx.Frame):
         self.lb_periodo = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Período:", wx.DefaultPosition, wx.Size(150, 26),
                                         wx.ALIGN_RIGHT)
         self.lb_periodo.Wrap(-1)
+
         lay_cabec_rotulo_02.Add(self.lb_periodo, 0, wx.ALL, 5)
 
         self.lb_exercicio = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Exercício:", wx.DefaultPosition,
                                           wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_exercicio.Wrap(-1)
+
         lay_cabec_rotulo_02.Add(self.lb_exercicio, 0, wx.ALL, 5)
 
         self.lb_usuario = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Criado por:", wx.DefaultPosition,
                                         wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_usuario.Wrap(-1)
+
         lay_cabec_rotulo_02.Add(self.lb_usuario, 0, wx.ALL, 5)
 
         self.lb_condicao = wx.StaticText(self.pn_cabecalho, wx.ID_ANY, u"Condição:", wx.DefaultPosition,
                                          wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_condicao.Wrap(-1)
+
         lay_cabec_rotulo_02.Add(self.lb_condicao, 0, wx.ALL, 5)
 
         lay_cabecalho.Add(lay_cabec_rotulo_02, 0, wx.EXPAND, 5)
@@ -173,7 +181,7 @@ class TARSLC(wx.Frame):
         lay_cabecalho.Fit(self.pn_cabecalho)
         lay_slip.Add(self.pn_cabecalho, 0, wx.EXPAND, 5)
 
-        self.pn_registros = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SIMPLE_BORDER)
+        self.pn_registros = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.BORDER_SIMPLE)
         lay_detalhes = wx.BoxSizer(wx.VERTICAL)
 
         self.pn_partidas = wx.Panel(self.pn_registros, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0)
@@ -202,12 +210,12 @@ class TARSLC(wx.Frame):
         self.gd_partidas.SetColLabelValue(2, u"Descrição")
         self.gd_partidas.SetColLabelValue(3, u"Montante")
         self.gd_partidas.SetColLabelValue(4, u"Moeda")
-        self.gd_partidas.SetColLabelAlignment(wx.ALIGN_LEFT, wx.ALIGN_CENTRE)
+        self.gd_partidas.SetColLabelAlignment(wx.ALIGN_LEFT, wx.ALIGN_CENTER)
 
         # Rows
         self.gd_partidas.EnableDragRowSize(True)
         self.gd_partidas.SetRowLabelSize(30)
-        self.gd_partidas.SetRowLabelAlignment(wx.ALIGN_CENTRE, wx.ALIGN_CENTRE)
+        self.gd_partidas.SetRowLabelAlignment(wx.ALIGN_CENTER, wx.ALIGN_CENTER)
 
         # Label Appearance
 
@@ -230,36 +238,43 @@ class TARSLC(wx.Frame):
         self.lb_registro = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Registro:", wx.DefaultPosition,
                                          wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_registro.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_registro, 0, wx.ALL, 5)
 
         self.lb_situacao = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Situação:", wx.DefaultPosition,
                                          wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_situacao.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_situacao, 0, wx.ALL, 5)
 
         self.lb_tipo_registro = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Tipo de registro:", wx.DefaultPosition,
                                               wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_tipo_registro.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_tipo_registro, 0, wx.ALL, 5)
 
         self.lb_unidade = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Unidade:", wx.DefaultPosition, wx.Size(150, 26),
                                         wx.ALIGN_RIGHT)
         self.lb_unidade.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_unidade, 0, wx.ALL, 5)
 
         self.lb_chave_registro = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Chave de registro:", wx.DefaultPosition,
                                                wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_chave_registro.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_chave_registro, 0, wx.ALL, 5)
 
         self.lb_conta_contabil = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Conta contábil:", wx.DefaultPosition,
                                                wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_conta_contabil.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_conta_contabil, 0, wx.ALL, 5)
 
         self.lb_centro_lucro = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Centro de lucro:", wx.DefaultPosition,
                                              wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_centro_lucro.Wrap(-1)
+
         lay_detal_rotulos_01.Add(self.lb_centro_lucro, 0, wx.ALL, 5)
 
         lay_detalhes1.Add(lay_detal_rotulos_01, 0, wx.EXPAND, 5)
@@ -292,9 +307,10 @@ class TARSLC(wx.Frame):
 
         lay_unidade.Add(self.tc_unidade, 0, wx.ALL, 5)
 
-        self.bt_cons_unidade = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY,
-                                               wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                               wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_cons_unidade = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                               wx.DefaultSize, wx.BU_AUTODRAW | 0)
+
+        self.bt_cons_unidade.SetBitmap(wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY))
         lay_unidade.Add(self.bt_cons_unidade, 0, wx.ALL, 5)
 
         lay_detal_campos_01.Add(lay_unidade, 1, wx.EXPAND, 5)
@@ -316,9 +332,10 @@ class TARSLC(wx.Frame):
 
         lay_conta.Add(self.tc_conta_contabil, 0, wx.ALL, 5)
 
-        self.bt_cons_conta_contabil = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY,
-                                                      wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                      wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_cons_conta_contabil = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                      wx.DefaultSize, wx.BU_AUTODRAW | 0)
+
+        self.bt_cons_conta_contabil.SetBitmap(wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY))
         lay_conta.Add(self.bt_cons_conta_contabil, 0, wx.ALL, 5)
 
         lay_detal_campos_01.Add(lay_conta, 1, wx.EXPAND, 1)
@@ -332,9 +349,10 @@ class TARSLC(wx.Frame):
 
         lay_centro_lucro.Add(self.tc_centro_lucro, 0, wx.ALL, 5)
 
-        self.bt_cons_centro_lucro = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY,
-                                                    wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                    wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_cons_centro_lucro = wx.BitmapButton(self.pn_detalhes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                    wx.DefaultSize, wx.BU_AUTODRAW | 0)
+
+        self.bt_cons_centro_lucro.SetBitmap(wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY))
         lay_centro_lucro.Add(self.bt_cons_centro_lucro, 0, wx.ALL, 5)
 
         lay_detal_campos_01.Add(lay_centro_lucro, 1, wx.EXPAND, 5)
@@ -346,26 +364,31 @@ class TARSLC(wx.Frame):
         self.lb_descricao = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Descrição:", wx.DefaultPosition,
                                           wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_descricao.Wrap(-1)
+
         lay_detal_rotulos_02.Add(self.lb_descricao, 0, wx.ALL, 5)
 
         self.lb_doc_referencia = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Doc. referência:", wx.DefaultPosition,
                                                wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_doc_referencia.Wrap(-1)
+
         lay_detal_rotulos_02.Add(self.lb_doc_referencia, 0, wx.ALL, 5)
 
         self.lb_doc_compensacao = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Doc. compensação:", wx.DefaultPosition,
                                                 wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_doc_compensacao.Wrap(-1)
+
         lay_detal_rotulos_02.Add(self.lb_doc_compensacao, 0, wx.ALL, 5)
 
         self.lb_montante_doc = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Montante:", wx.DefaultPosition,
                                              wx.Size(150, 26), wx.ALIGN_RIGHT)
         self.lb_montante_doc.Wrap(-1)
+
         lay_detal_rotulos_02.Add(self.lb_montante_doc, 0, wx.ALL, 5)
 
         self.lb_moeda = wx.StaticText(self.pn_detalhes, wx.ID_ANY, u"Moeda:", wx.DefaultPosition, wx.Size(150, 26),
                                       wx.ALIGN_RIGHT)
         self.lb_moeda.Wrap(-1)
+
         lay_detal_rotulos_02.Add(self.lb_moeda, 0, wx.ALL, 5)
 
         lay_detalhes1.Add(lay_detal_rotulos_02, 0, wx.EXPAND, 5)
@@ -410,49 +433,49 @@ class TARSLC(wx.Frame):
         lay_detalhes.Add(self.pn_detalhes, 1, wx.EXPAND, 5)
 
         self.pn_botoes = wx.Panel(self.pn_registros, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
-                                  wx.RAISED_BORDER | wx.TAB_TRAVERSAL)
+                                  wx.TAB_TRAVERSAL | wx.BORDER_RAISED)
         lay_botao = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.bt_part_adicionar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY,
-                                                 wx.Bitmap(u"icons/ac_adicionar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                 wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_part_adicionar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                 wx.DefaultSize, wx.BU_AUTODRAW | 0)
 
+        self.bt_part_adicionar.SetBitmap(wx.Bitmap(u"icons/ac_adicionar_16x16.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_adicionar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_adicionar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_adicionar.Enable(False)
 
         lay_botao.Add(self.bt_part_adicionar, 0, wx.ALL, 5)
 
-        self.bt_part_consultar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY,
-                                                 wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                 wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_part_consultar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                 wx.DefaultSize, wx.BU_AUTODRAW | 0)
 
+        self.bt_part_consultar.SetBitmap(wx.Bitmap(u"icons/ac_buscar_16x16.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_consultar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_buscar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_consultar.Enable(False)
 
         lay_botao.Add(self.bt_part_consultar, 0, wx.ALL, 5)
 
-        self.bt_part_excluir = wx.BitmapButton(self.pn_botoes, wx.ID_ANY,
-                                               wx.Bitmap(u"icons/ac_lixeira_16x16.png", wx.BITMAP_TYPE_ANY),
-                                               wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_part_excluir = wx.BitmapButton(self.pn_botoes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                               wx.DefaultSize, wx.BU_AUTODRAW | 0)
 
+        self.bt_part_excluir.SetBitmap(wx.Bitmap(u"icons/ac_lixeira_16x16.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_excluir.SetBitmapDisabled(wx.Bitmap(u"icons/ac_lixeira_16x16_inat.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_excluir.Enable(False)
 
         lay_botao.Add(self.bt_part_excluir, 0, wx.ALL, 5)
 
-        self.bt_part_confirmar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY,
-                                                 wx.Bitmap(u"icons/ac_confirmar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                 wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_part_confirmar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                 wx.DefaultSize, wx.BU_AUTODRAW | 0)
 
+        self.bt_part_confirmar.SetBitmap(wx.Bitmap(u"icons/ac_confirmar_16x16.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_confirmar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_confirmar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_confirmar.Enable(False)
 
         lay_botao.Add(self.bt_part_confirmar, 0, wx.ALL, 5)
 
-        self.bt_part_cancelar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY,
-                                                wx.Bitmap(u"icons/ac_cancelar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW)
+        self.bt_part_cancelar = wx.BitmapButton(self.pn_botoes, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition,
+                                                wx.DefaultSize, wx.BU_AUTODRAW | 0)
 
+        self.bt_part_cancelar.SetBitmap(wx.Bitmap(u"icons/ac_cancelar_16x16.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_cancelar.SetBitmapDisabled(wx.Bitmap(u"icons/ac_cancelar_16x16_inat.png", wx.BITMAP_TYPE_ANY))
         self.bt_part_cancelar.Enable(False)
 
@@ -472,7 +495,7 @@ class TARSLC(wx.Frame):
 
         self.SetSizer(lay_body)
         self.Layout()
-        self.sb_slip = self.CreateStatusBar(1, 0, wx.ID_ANY)
+        self.sb_slip = self.CreateStatusBar(1, wx.STB_SIZEGRIP, wx.ID_ANY)
 
         self.Centre(wx.BOTH)
 

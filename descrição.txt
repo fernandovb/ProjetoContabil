@@ -39,8 +39,12 @@ utilizadas antes dos nomes para referenciar tais módulos e falicitar o acesso. 
 
     - SEBD (System Environment Basics Data, ou Dados Básicos do Ambiente de Sistema): conterá os módulos de uso do
     sistema, possibilitando criação de ambientes que possibilitem o controle de forma independente para cada entidade.
-    Podemos considerar o cadastro de empresas, unidades, atividades, ocupações etc:
+    Podemos considerar o cadastro de empresas, unidades, atividades, ocupações, operações etc:
         * ER: Environment Records, ou Cadastros de Ambiente, previsto para transações de manutenção de cadastros;
+        * EC: Environment Coding, ou Codificação de Ambiente, prefixo para transações de controle de codificações
+        utilizadas pelo sistema, independente da área;
+		* EP: Environment Parameters, ou Parâmetros do Ambiente, prefixo para transações e tabelas de parâmetros do
+		sistema.
 
     - PRM (Gestão de Relacionamento de Pessoas): conterá os módulos de controle de relações de pessoas. Este módulo se
     baseia no conceito PRM (People Relationship Management, ou Gestão de Relacionamento de Pessoas), que visa incluir
@@ -58,6 +62,7 @@ utilizadas antes dos nomes para referenciar tais módulos e falicitar o acesso. 
         * AL: Accounting Listin, ou Listagem Contábil, prefixo para relatórios gerenciais contábeis;
         * AS: Accounting Statements, ou Demonstrações Contábeis, prefixo para demonstrações contábeis de apresentação
         formal;
+        * AF: Accounting Find, ou Busca Contábil, prefixo para buscas gerais dentro do módulo contábil.
 
     - FMIS (Financial Management Information System): conterá o módulo financeiro, utilizando os recursos contábeis de
     registro, mas com informações complementares, além de recursos adicionais para facilitar a gestão financeira.

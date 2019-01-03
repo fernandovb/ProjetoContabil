@@ -1,1 +1,1 @@
-__all__ = ['dafcon']
+__all__ = ['dafcon', 'darslc']

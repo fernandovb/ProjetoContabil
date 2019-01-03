@@ -1,6 +1,7 @@
 import pymysql
 import _regras.sys.ssglob as ssglob
 
+
 class Conexao(object):
 
     def on_conectar(self, host='localhost', user='', senha='', db='fvb_db', emp=0):

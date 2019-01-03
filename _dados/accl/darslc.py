@@ -2,6 +2,7 @@
 
 import _dados.sys.ssgcon as conexao
 
+
 class DARSLC:
 
     def __init__(self,
