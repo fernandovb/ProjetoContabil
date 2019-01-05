@@ -9,7 +9,9 @@ from dateutil.parser import parse
 import datedelta
 from _telas.desingner.tcrctm import TCRCTM
 from _telas.sys.ssdate import SSDATE
-from _regras.clcm.rcrctm import RCRCTM, RCRITM
+from _regras.clcm.rcrctm import RCRCTM, RCRITM, RCRDOC
+from _regras.prm.rplpes import RPLPES
+import utilidades.num_extenso as extenso
 
 
 class CRCTM(TCRCTM):
@@ -17,6 +19,7 @@ class CRCTM(TCRCTM):
     item_acao = 0
     litens = []
     situacao = {'Ativo': 1, 'Análise': 2, 'Bloqueado': 3, 'Saneamento': 4, 'Encerrado': 5, 'Cancelado': 9}
+    tp_cond_pgto = {0: 'vincendo', 1: 'vencido'}
 
     def __init__(self, *args, **kwargs):
         super(CRCTM, self).__init__(*args, **kwargs)
@@ -26,32 +29,35 @@ class CRCTM(TCRCTM):
     ### Ações do contrato (RibbonBar) ###
 
     def ac_ctr_consultar(self, event):
-        try:
-            self.ctr_acao = 1
-            self.sb_contrato.SetStatusText('', 0)
-            consulta = RCRCTM(self.ctr_acao, self.tc_ctr_contrato.Value)
-            if consulta.ac_consultar():
+        if self.tc_ctr_contrato.Value != '':
+            try:
+                self.ctr_acao = 1
                 self.sb_contrato.SetStatusText('', 0)
-                self.tc_ctr_contrato.Value = str(consulta.contrato)
-                self.tc_ctr_operacao.Value = str(consulta.operacao)
-                self.tc_ctr_unidade.Value = str(consulta.unidade)
-                self.tc_ctr_pessoa.Value = str(consulta.pessoa)
-                self.tc_ctr_nome_pessoa.Value = ''
-                self.tc_ctr_vigencia.Value = str(consulta.vigencia)
-                self.cb_ctr_vigencia.Selection = consulta.tp_vigencia - 1
-                self.cb_ctr_situacao.Value = loc_sitacao(self.situacao, consulta.situacao)
-                self.tc_ctr_dt_emissao.Value = consulta.dt_emissao.strftime('%d/%m/%Y')
-                self.tc_ctr_dt_inicio.Value = consulta.dt_inicio.strftime('%d/%m/%Y')
-                self.tc_ctr_dt_termino.Value = consulta.dt_termino.strftime('%d/%m/%Y')
-                self.tc_ctr_valor.Value = f'{consulta.montante:.2f}'
-                self.litens = consulta.litens
-                self.fc_atualiza_grade()
-            else:
-                self.sb_contrato.SetStatusText('Contrato não localizado!', 0)
-            self.fc_ctr_ativa_botoes()
-            self.fc_item_ativa_botoes()
-        except:
-            pass
+                consulta = RCRCTM(self.ctr_acao, self.tc_ctr_contrato.Value)
+                if consulta.ac_consultar():
+                    self.sb_contrato.SetStatusText('', 0)
+                    self.tc_ctr_contrato.Value = str(consulta.contrato)
+                    self.tc_ctr_operacao.Value = str(consulta.operacao)
+                    self.tc_ctr_unidade.Value = str(consulta.unidade)
+                    self.tc_ctr_pessoa.Value = str(consulta.pessoa)
+                    self.tc_ctr_nome_pessoa.Value = ''
+                    self.tc_ctr_vigencia.Value = str(consulta.vigencia)
+                    self.cb_ctr_vigencia.Selection = consulta.tp_vigencia - 1
+                    self.cb_ctr_situacao.Value = loc_sitacao(self.situacao, consulta.situacao)
+                    self.tc_ctr_dt_emissao.Value = consulta.dt_emissao.strftime('%d/%m/%Y')
+                    self.tc_ctr_dt_inicio.Value = consulta.dt_inicio.strftime('%d/%m/%Y')
+                    self.tc_ctr_dt_termino.Value = consulta.dt_termino.strftime('%d/%m/%Y')
+                    self.tc_ctr_valor.Value = f'{consulta.montante:.2f}'
+                    self.litens = consulta.litens
+                    self.fc_atualiza_grade()
+                    self.fc_ctr_ativa_botoes()
+                    self.fc_item_ativa_botoes()
+                else:
+                    self.sb_contrato.SetStatusText('Contrato não localizado!', 0)
+            except:
+                pass
+        else:
+            self.sb_contrato.SetStatusText('Informe o número de um contrato!', 0)
 
     def ac_ctr_adicionar(self, event):
         self.ctr_acao = 2
@@ -65,6 +71,8 @@ class CRCTM(TCRCTM):
         self.ctr_acao = 3
         self.sb_contrato.SetStatusText('', 0)
         self.fc_ctr_ativa_botoes()
+        self.fc_ctr_ativar_campos(True)
+        self.fc_item_ativa_botoes()
         pass
 
     def ac_ctr_excluir(self, event):
@@ -78,7 +86,7 @@ class CRCTM(TCRCTM):
             mensagem = ''
             confirma = RCRCTM(self.ctr_acao,
                               contrato='',
-                              operacao=self.tc_ctr_operacao.Value,
+                              operacao=str(self.tc_ctr_operacao.Value).upper(),
                               unidade=int(self.tc_ctr_unidade.Value),
                               pessoa=int(self.tc_ctr_pessoa.Value),
                               vigencia=self.tc_ctr_vigencia.Value,
@@ -87,6 +95,8 @@ class CRCTM(TCRCTM):
                               dt_emissao=parse(self.tc_ctr_dt_emissao.Value),
                               dt_inicio=parse(self.tc_ctr_dt_inicio.Value),
                               dt_termino=parse(self.tc_ctr_dt_termino.Value))
+            if self.ctr_acao != 2:
+                confirma.contrato = self.tc_ctr_contrato.Value
             confirma.litens = self.litens
             contrato = str(confirma.ac_gravar())
             self.ctr_acao = 0
@@ -111,7 +121,30 @@ class CRCTM(TCRCTM):
         self.fc_item_ativar_campos(False)
 
     def ac_ctr_gerar_doc(self, event):
-        pass
+        pessoa = RPLPES(int(self.tc_ctr_pessoa.Value))
+        novo_doc = self.tc_ctr_contrato.Value + '-' + self.tc_ctr_pessoa.Value + '.docx'
+        documento = RCRDOC('ContratoModelo.docx')
+        if documento.fc_gerar_documento(novo_doc,
+                                        ctr_operacao_nome=str(self.tc_ctr_operacao.Value),
+                                        ctr_contrato=str(self.tc_ctr_contrato.Value),
+                                        ctr_nome_formal=pessoa.nome_formal,
+                                        ctr_nacionalidade=pessoa.nacionalidade,
+                                        ctr_est_civil=pessoa.est_civil,
+                                        ctr_atividade=pessoa.atividade,
+                                        ctr_estadual=pessoa.estadual,
+                                        ctr_org_emissor=pessoa.org_emissor,
+                                        ctr_federal=pessoa.federal,
+                                        ctr_objeto=str(self.litens[0].descricao).lower(),
+                                        ctr_vigencia=str(self.tc_ctr_vigencia.Value),
+                                        ctr_dt_inicio=str(self.tc_ctr_dt_inicio.Value),
+                                        ctr_dt_termino=str(self.tc_ctr_dt_termino.Value),
+                                        ctr_montante=f'R$ {self.litens[0].val_unit:.2f}',
+                                        ctr_val_extenso=extenso.extenso(float(self.litens[0].val_unit), 'real'),
+                                        ctr_dia_vcto=str(self.litens[0].dia_vcto),
+                                        ctr_tp_cond_pgto=self.tp_cond_pgto[self.litens[0].tp_cond_pgto]):
+            self.sb_contrato.SetStatusText(f'Documento {novo_doc} gerado com sucesso.')
+        else:
+            self.sb_contrato.SetStatusText('Erro ao gerar o documento!')
 
     def ac_ctr_imprimir(self, event):
         pass
@@ -169,7 +202,7 @@ class CRCTM(TCRCTM):
             self.rbb_contrato.EnableButton(wx.ID_DELETE, True)
             self.rbb_registro.EnableButton(wx.ID_SAVE, False)
             self.rbb_registro.EnableButton(wx.ID_CANCEL, False)
-            self.rbb_documento.EnableButton(wx.ID_EXECUTE, False)
+            self.rbb_documento.EnableButton(wx.ID_EXECUTE, True)
             self.rbb_documento.EnableButton(wx.ID_PRINT, False)
             self.tc_ctr_contrato.Enable(True)
         if (self.ctr_acao == 2) or (self.ctr_acao == 3):
@@ -214,6 +247,7 @@ class CRCTM(TCRCTM):
         self.tc_item_form_pgto.Value = str(item.form_pgto)
         self.tc_item_cond_pgto.Value = str(item.cond_pgto)
         self.cb_item_tipo_cpgto.Selection = int(item.tp_cond_pgto)
+        self.tc_item_dia_vcto.Value = str(item.dia_vcto)
         self.tc_item_conta_bancaria.Value = str(item.conta_banc)
         self.tc_item_cartao.Value = str(item.cartao)
         self.fc_item_ativa_botoes()
@@ -252,6 +286,7 @@ class CRCTM(TCRCTM):
                           form_pgto=self.tc_item_form_pgto.Value,
                           cond_pgto=self.tc_item_cond_pgto.Value,
                           tp_cond_pgto=int(self.cb_item_tipo_cpgto.GetSelection()),
+                          dia_vcto=int(self.tc_item_dia_vcto.Value),
                           conta_banc=int(self.tc_item_conta_bancaria.Value),
                           cartao=int(self.tc_item_cartao.Value),
                           acao=self.item_acao)
@@ -269,6 +304,7 @@ class CRCTM(TCRCTM):
                     item.form_pgto = str(self.tc_item_form_pgto.Value)
                     item.cond_pgto = str(self.tc_item_cond_pgto.Value)
                     item.tp_cond_pgto = self.cb_item_tipo_cpgto.GetSelection()
+                    item.dia_vcto = int(self.tc_item_dia_vcto.Value)
                     item.conta_banc = int(self.tc_item_conta_bancaria.Value)
                     item.cartao = int(self.tc_item_cartao.Value)
                     break
@@ -345,6 +381,7 @@ class CRCTM(TCRCTM):
         # Página 'Financeiro'
         self.tc_item_form_pgto.Value = ''
         self.tc_item_cond_pgto.Value = ''
+        self.tc_item_dia_vcto.Value = ''
         self.cb_item_tipo_cpgto.Selection = 0
         self.tc_item_conta_bancaria.Value = ''
         self.tc_item_cartao.Value = ''
@@ -367,6 +404,7 @@ class CRCTM(TCRCTM):
         self.tc_item_cond_pgto.Enable(condicao)
         # self.bt_item_loc_cond_pgto.Enable(condicao)
         self.cb_item_tipo_cpgto.Enable(condicao)
+        self.tc_item_dia_vcto.Enable(condicao)
         self.tc_item_conta_bancaria.Enable(condicao)
         # self.bt_item_loc_conta_banc.Enable(condicao)
         self.tc_item_cartao.Enable(condicao)

@@ -41,6 +41,7 @@ utilizadas antes dos nomes para referenciar tais módulos e falicitar o acesso. 
     sistema, possibilitando criação de ambientes que possibilitem o controle de forma independente para cada entidade.
     Podemos considerar o cadastro de empresas, unidades, atividades, ocupações, operações etc:
         * ER: Environment Records, ou Cadastros de Ambiente, previsto para transações de manutenção de cadastros;
+        * EL: Environment Listing, ou Listagem de Ambiente, prefixo para transações de busca e localização;
         * EC: Environment Coding, ou Codificação de Ambiente, prefixo para transações de controle de codificações
         utilizadas pelo sistema, independente da área;
 		* EP: Environment Parameters, ou Parâmetros do Ambiente, prefixo para transações e tabelas de parâmetros do

@@ -10,6 +10,7 @@
 import wx
 import wx.xrc
 
+
 ###########################################################################
 ## Class FrmMenu
 ###########################################################################
@@ -23,8 +24,8 @@ class FrmMenu(wx.Frame):
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
         self.MnbMenu = wx.MenuBar(0)
-		self.MnSistema = wx.Menu()
-		self.mn_cadastro = wx.Menu()
+        self.MnSistema = wx.Menu()
+        self.mn_cadastro = wx.Menu()
         self.mn_dbemp01 = wx.MenuItem(self.mn_cadastro, wx.ID_ANY, u"Empresas", wx.EmptyString, wx.ITEM_NORMAL)
         self.mn_cadastro.Append(self.mn_dbemp01)
 
@@ -41,7 +42,7 @@ class FrmMenu(wx.Frame):
 
         self.MnbMenu.Append(self.MnSistema, u"Sistema")
 
-		self.MnSobre = wx.Menu()
+        self.MnSobre = wx.Menu()
         self.mn_info = wx.MenuItem(self.MnSobre, wx.ID_ANY, u"Sobre o sistema", wx.EmptyString, wx.ITEM_NORMAL)
         self.MnSobre.Append(self.mn_info)
 
@@ -57,14 +58,14 @@ class FrmMenu(wx.Frame):
         self.tc_executar = wx.TextCtrl(self.m_toolBar1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
                                        0)
         self.m_toolBar1.AddControl(self.tc_executar)
-        self.bt_executar = self.m_toolBar1.AddLabelTool(wx.ID_ANY, u"tool",
-                                                        wx.Bitmap(u"icons/ac_executar_16x16.png", wx.BITMAP_TYPE_ANY),
-                                                        wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString,
-                                                        None)
+        self.bt_executar = self.m_toolBar1.AddTool(wx.ID_ANY, u"tool",
+                                                   wx.Bitmap(u"icons/ac_executar_16x16.png", wx.BITMAP_TYPE_ANY),
+                                                   wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString,
+                                                   None)
 
-		self.m_toolBar1.AddSeparator()
+        self.m_toolBar1.AddSeparator()
 
-		self.m_toolBar1.Realize()
+        self.m_toolBar1.Realize()
 
         self.StbMenu = self.CreateStatusBar(3, wx.STB_DEFAULT_STYLE, wx.ID_ANY)
         SizPrincipal = wx.BoxSizer(wx.VERTICAL)
@@ -86,11 +87,11 @@ class FrmMenu(wx.Frame):
         SizPrincipal.Add(SizBody, 1, wx.EXPAND, 5)
 
         self.SetSizer(SizPrincipal)
-		self.Layout()
+        self.Layout()
 
         self.Centre(wx.BOTH)
 
-		# Connect Events
+        # Connect Events
         self.Bind(wx.EVT_MENU, self.ac_emp01, id=self.mn_dbemp01.GetId())
         self.Bind(wx.EVT_MENU, self.ac_prm01, id=self.mn_prm01.GetId())
         self.Bind(wx.EVT_MENU, self.ac_crctm, id=self.mn_crctm.GetId())
@@ -100,24 +101,23 @@ class FrmMenu(wx.Frame):
         self.Bind(wx.EVT_TOOL, self.ac_executar, id=self.bt_executar.GetId())
 
     def __del__(self):
-		pass
+        pass
 
-
-	# Virtual event handlers, overide them in your derived class
+    # Virtual event handlers, overide them in your derived class
     def ac_emp01(self, event):
-		event.Skip()
+        event.Skip()
 
     def ac_prm01(self, event):
-		event.Skip()
+        event.Skip()
 
     def ac_crctm(self, event):
         event.Skip()
 
     def on_sair(self, event):
-		event.Skip()
+        event.Skip()
 
     def ac_sobre(self, event):
-		event.Skip()
+        event.Skip()
 
     def ac_executar(self, event):
-		event.Skip()
+        event.Skip()

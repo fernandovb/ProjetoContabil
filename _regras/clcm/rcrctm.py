@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import _regras.sys.ssglob as ssglob
 from datetime import datetime
 from dateutil.parser import parse
+import win32com.client as win32
+import os.path as path
+import _regras.sys.ssglob as ssglob
 from _dados.clcm.dcrctm import DCRCTM, DCRITM
 
 
@@ -21,11 +23,11 @@ class RCRCTM:
                  dt_inicio=datetime,
                  dt_termino=datetime):
         self.acao = int(acao)
+        self.litens = []
         self.empresa = ssglob.SSGLOB.empresa
         self.contrato = str(contrato)
-        self.litens = []
         if acao == 2:
-            self.operacao = str(operacao)
+            self.operacao = str(operacao).upper()
             self.unidade = int(unidade)
             self.pessoa = int(pessoa)
             self.vigencia = int(vigencia)
@@ -34,7 +36,6 @@ class RCRCTM:
             self.dt_emissao = dt_emissao.strftime('%Y-%m-%d')
             self.dt_inicio = dt_inicio.strftime('%Y-%m-%d')
             self.dt_termino = dt_termino.strftime('%Y-%m-%d')
-            self.montante = self.fc_total_contrato()
 
     def ac_consultar(self):
         try:
@@ -66,6 +67,7 @@ class RCRCTM:
                                item.form_pgto,
                                item.cond_pgto,
                                item.tp_cond_pgto,
+                               item.dia_vcto,
                                item.conta_banc,
                                item.cartao,
                                item.acao)
@@ -77,25 +79,25 @@ class RCRCTM:
             return False
 
     def ac_gravar(self):
-        gravar = DCRCTM(self.acao,
-                        self.empresa,
-                        self.contrato,
-                        self.operacao,
-                        self.unidade,
-                        self.pessoa,
-                        self.vigencia,
-                        self.tp_vigencia,
-                        self.situacao,
-                        self.dt_emissao,
-                        self.dt_inicio,
-                        self.dt_termino,
-                        self.montante)
+        gravar = DCRCTM(acao=self.acao,
+                        empresa=self.empresa,
+                        contrato=self.contrato,
+                        operacao=self.operacao,
+                        unidade=self.unidade,
+                        pessoa=self.pessoa,
+                        vigencia=self.vigencia,
+                        tp_vigencia=self.tp_vigencia,
+                        situacao=self.situacao,
+                        dt_emissao=self.dt_emissao,
+                        dt_inicio=self.dt_inicio,
+                        dt_termino=self.dt_termino,
+                        montante=self.fc_total_contrato())
         for item in self.litens:
             it_ctr = DCRITM(empresa=self.empresa,
                             contrato=self.contrato,
                             codigo=item.codigo,
                             situacao=item.situacao,
-                            tp_item=item.tp_servico,
+                            tp_item=item.tp_item,
                             item=item.item,
                             descricao=item.descricao,
                             qtde=item.qtde,
@@ -106,6 +108,7 @@ class RCRCTM:
                             form_pgto=item.form_pgto,
                             cond_pgto=item.cond_pgto,
                             tp_cond_pgto=item.tp_cond_pgto,
+                            dia_vcto=item.dia_vcto,
                             conta_banc=item.conta_banc,
                             cartao=item.cartao,
                             acao=item.acao)
@@ -137,6 +140,7 @@ class RCRITM:
                  form_pgto='',
                  cond_pgto='',
                  tp_cond_pgto=0,
+                 dia_vcto=0,
                  conta_banc=0,
                  cartao=0,
                  acao=0):
@@ -145,14 +149,37 @@ class RCRITM:
         self.tp_item = int(tp_item)
         self.item = int(item)
         self.situacao = int(situacao)
-        self.descricao = str(descricao)
+        self.descricao = str(descricao).upper()
         self.qtde = float(qtde)
         self.val_unit = float(val_unit)
         self.val_total = float(val_total)
-        self.moeda = str(moeda)
+        self.moeda = str(moeda).upper()
         self.imobilizado = int(imobilizado)
-        self.form_pgto = str(form_pgto)
-        self.cond_pgto = str(cond_pgto)
+        self.form_pgto = str(form_pgto).upper()
+        self.cond_pgto = str(cond_pgto).upper()
         self.tp_cond_pgto = int(tp_cond_pgto)
+        self.dia_vcto = int(dia_vcto)
         self.conta_banc = int(conta_banc)
         self.cartao = int(cartao)
+
+
+class RCRDOC:
+
+    def __init__(self, modelo):
+        self.modelo = modelo
+        self.word = win32.gencache.EnsureDispatch('Word.Application')
+
+    def fc_gerar_documento(self, nome_doc, **kwargs):
+        try:
+            self.nome_doc = nome_doc
+            self.word.Documents.Open('C:\\ProjetoContabil\\modelos\\' + self.modelo)
+            for key, value in kwargs.items():
+                self.word.ActiveDocument.Bookmarks(key).Select()
+                self.word.Selection.TypeText(value)
+            self.word.ActiveDocument.SaveAs(path.expanduser("~\\Documents\\" + self.nome_doc))
+            self.word.Documents.Close()
+            return True
+        except:
+            return False
+        finally:
+            self.word.Application.Quit(-1)
