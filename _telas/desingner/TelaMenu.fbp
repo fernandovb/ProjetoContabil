@@ -77,15 +77,15 @@
                 <property name="window_name"></property>
                 <property name="window_style"></property>
                 <object class="wxMenu" expanded="1">
-                    <property name="label">Sistema</property>
-                    <property name="name">MnSistema</property>
+                    <property name="label">Principal</property>
+                    <property name="name">MnPrincipal</property>
                     <property name="permission">protected</property>
                     <object class="submenu" expanded="1">
                         <property name="bitmap"></property>
                         <property name="label">Cadastros</property>
                         <property name="name">mn_cadastro</property>
                         <property name="permission">protected</property>
-                        <object class="wxMenuItem" expanded="1">
+                        <object class="wxMenuItem" expanded="0">
                             <property name="bitmap"></property>
                             <property name="checked">0</property>
                             <property name="enabled">1</property>
@@ -99,7 +99,7 @@
                             <property name="unchecked_bitmap"></property>
                             <event name="OnMenuSelection">ac_emp01</event>
                         </object>
-                        <object class="wxMenuItem" expanded="1">
+                        <object class="wxMenuItem" expanded="0">
                             <property name="bitmap"></property>
                             <property name="checked">0</property>
                             <property name="enabled">1</property>
@@ -113,7 +113,7 @@
                             <property name="unchecked_bitmap"></property>
                             <event name="OnMenuSelection">ac_prm01</event>
                         </object>
-                        <object class="wxMenuItem" expanded="1">
+                        <object class="wxMenuItem" expanded="0">
                             <property name="bitmap"></property>
                             <property name="checked">0</property>
                             <property name="enabled">1</property>
@@ -128,7 +128,7 @@
                             <event name="OnMenuSelection">ac_crctm</event>
                         </object>
                     </object>
-                    <object class="wxMenuItem" expanded="1">
+                    <object class="wxMenuItem" expanded="0">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
@@ -144,10 +144,29 @@
                     </object>
                 </object>
                 <object class="wxMenu" expanded="1">
+                    <property name="label">Sistema</property>
+                    <property name="name">mn_sistema</property>
+                    <property name="permission">protected</property>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help">Cópia de segurança do BD</property>
+                        <property name="id">wxID_ANY</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Backup</property>
+                        <property name="name">mn_backup</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">ac_backup</event>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="0">
                     <property name="label">S&amp;obre</property>
                     <property name="name">MnSobre</property>
                     <property name="permission">protected</property>
-                    <object class="wxMenuItem" expanded="1">
+                    <object class="wxMenuItem" expanded="0">
                         <property name="bitmap"></property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>

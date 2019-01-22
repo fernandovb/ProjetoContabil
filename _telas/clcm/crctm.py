@@ -9,8 +9,10 @@ from dateutil.parser import parse
 import datedelta
 from _telas.desingner.tcrctm import TCRCTM
 from _telas.sys.ssdate import SSDATE
+from _telas.sebd.efopr import EFOPR
 from _regras.clcm.rcrctm import RCRCTM, RCRITM, RCRDOC
 from _regras.prm.rplpes import RPLPES
+from _regras.accl.rifprp import RIFPRP
 import utilidades.num_extenso as extenso
 
 
@@ -122,6 +124,9 @@ class CRCTM(TCRCTM):
 
     def ac_ctr_gerar_doc(self, event):
         pessoa = RPLPES(int(self.tc_ctr_pessoa.Value))
+        imob = RIFPRP()
+        if imob.fc_busca_codigo(int(self.tc_item_imobilizado.Value)):
+            medidor_1 = str(imob.medidor_1)
         novo_doc = self.tc_ctr_contrato.Value + '-' + self.tc_ctr_pessoa.Value + '.docx'
         documento = RCRDOC('ContratoModelo.docx')
         if documento.fc_gerar_documento(novo_doc,
@@ -139,6 +144,7 @@ class CRCTM(TCRCTM):
                                         ctr_dt_inicio=str(self.tc_ctr_dt_inicio.Value),
                                         ctr_dt_termino=str(self.tc_ctr_dt_termino.Value),
                                         ctr_montante=f'R$ {self.litens[0].val_unit:.2f}',
+                                        ctr_medidor_1=str(imob.medidor_1),
                                         ctr_val_extenso=extenso.extenso(float(self.litens[0].val_unit), 'real'),
                                         ctr_dia_vcto=str(self.litens[0].dia_vcto),
                                         ctr_tp_cond_pgto=self.tp_cond_pgto[self.litens[0].tp_cond_pgto]):
@@ -169,7 +175,7 @@ class CRCTM(TCRCTM):
     def fc_ctr_ativar_campos(self, condicao: object = bool) -> object:
         self.tc_ctr_contrato.Enable(not condicao)
         self.tc_ctr_operacao.Enable(condicao)
-        # self.bt_ctr_loc_operacao.Enable(condicao)
+        self.bt_ctr_loc_operacao.Enable(condicao)
         self.tc_ctr_unidade.Enable(condicao)
         # self.bt_ctr_unidade.Enable(condicao)
         self.tc_ctr_pessoa.Enable(condicao)
@@ -241,8 +247,9 @@ class CRCTM(TCRCTM):
         self.tc_item_quantidade.Value = f'{item.qtde:.3f}'
         self.tc_item_val_unitario.Value = f'{item.val_unit:.2f}'
         self.tc_item_val_total.Value = f'{item.val_total:.2f}'
+        self.tc_item_moeda.Value = str(item.moeda)
         self.tc_item_imobilizado.Value = str(item.imobilizado)
-        self.tc_item_imob_nome.Value = ''
+        self.tc_item_imob_nome.Value = str(item.imob_desc)
         # Página 'Financeiro'
         self.tc_item_form_pgto.Value = str(item.form_pgto)
         self.tc_item_cond_pgto.Value = str(item.cond_pgto)
@@ -283,6 +290,7 @@ class CRCTM(TCRCTM):
                           val_total=float(self.tc_item_val_total.Value),
                           moeda=self.tc_item_moeda.Value,
                           imobilizado=int(self.tc_item_imobilizado.Value),
+                          imob_desc=str(self.tc_item_imob_nome),
                           form_pgto=self.tc_item_form_pgto.Value,
                           cond_pgto=self.tc_item_cond_pgto.Value,
                           tp_cond_pgto=int(self.cb_item_tipo_cpgto.GetSelection()),
@@ -365,6 +373,15 @@ class CRCTM(TCRCTM):
         event.Skip()
 
     def on_focus_vtotal(self, event):
+        event.Skip()
+
+    def off_focus_imob(self, event):
+        imob = RIFPRP()
+        if imob.fc_busca_codigo(int(self.tc_item_imobilizado.Value)):
+            self.tc_item_imob_nome.Value = str(imob.descricao)
+        event.Skip()
+
+    def on_focus_imob(self, event):
         event.Skip()
 
     def fc_item_limpa_campos(self):
@@ -454,7 +471,11 @@ class CRCTM(TCRCTM):
     ### Ações de botoes de localização e consultas ###
 
     def ac_loc_operacao(self, event):
-        pass
+        consulta = EFOPR(self)
+        if consulta.ShowModal() == wx.ID_OK:
+            self.tc_ctr_operacao.Value = str(
+                consulta.gd_resultado.GetCellValue(consulta.gd_resultado.GetGridCursorRow(), 0))
+        consulta.Destroy()
 
     def ac_loc_pessoa(self, event):
         pass

@@ -2,6 +2,7 @@
 
 import wx
 import wx.xrc
+from os import system
 from wx.lib.pubsub import pub
 from _telas.desingner.tela_menu import FrmMenu
 from _telas.sys.sulog import SULOG
@@ -85,6 +86,12 @@ class MN01(FrmMenu):
         except:
             self.StbMenu.SetStatusText(f'Erro ao chamar {self.tc_executar.Value}.', 2)
 
+    def ac_backup(self, event):
+        try:
+            system("mysqldump -uroot -pCronos@8.pjm -e fvb_db >> fvb_db.sql")
+            self.StbMenu.SetStatusText('Backup concluído!', 2)
+        except:
+            self.StbMenu.SetStatusText('Erro ao executar o backup', 2)
 
     def ac_emp01(self, event):
         self.ac_chama_form('EREMP')

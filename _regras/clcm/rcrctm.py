@@ -5,6 +5,7 @@ from dateutil.parser import parse
 import win32com.client as win32
 import os.path as path
 import _regras.sys.ssglob as ssglob
+from _regras.accl.rifprp import RIFPRP
 from _dados.clcm.dcrctm import DCRCTM, DCRITM
 
 
@@ -137,6 +138,7 @@ class RCRITM:
                  val_total=0.00,
                  moeda='',
                  imobilizado=0,
+                 imob_desc='',
                  form_pgto='',
                  cond_pgto='',
                  tp_cond_pgto=0,
@@ -155,12 +157,20 @@ class RCRITM:
         self.val_total = float(val_total)
         self.moeda = str(moeda).upper()
         self.imobilizado = int(imobilizado)
+        self.imob_desc = str(self.fc_busca_imobilizado())
         self.form_pgto = str(form_pgto).upper()
         self.cond_pgto = str(cond_pgto).upper()
         self.tp_cond_pgto = int(tp_cond_pgto)
         self.dia_vcto = int(dia_vcto)
         self.conta_banc = int(conta_banc)
         self.cartao = int(cartao)
+
+    def fc_busca_imobilizado(self):
+        imob = RIFPRP()
+        if imob.fc_busca_codigo(self.imobilizado):
+            return imob.descricao
+        else:
+            return ''
 
 
 class RCRDOC:

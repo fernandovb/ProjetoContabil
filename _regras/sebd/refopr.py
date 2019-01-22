@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from _dados.accl.dafcon import DAFCON
+from _dados.sebd.defopr import DEFOPR
 import _regras.sys.ssglob as ssglob
 
-class RAFCON:
 
-    def __init__(self, empresa='', codigo='', descricao='', ordem=''):
+class REFOPR:
+
+    def __init__(self, codigo='', descricao=''):
         self.empresa = str(ssglob.SSGLOB.empresa)
         self.codigo = codigo
         self.descricao = descricao
-        self.ordem = ordem
 
     def fc_buscar(self):
-        busca = DAFCON(self.empresa, self.codigo, self.descricao, self.ordem)
+        busca = DEFOPR(empresa=self.empresa, codigo=self.codigo, descricao=self.descricao)
         resultado = busca.fc_buscar()
         if resultado[0]:
             return resultado[1]

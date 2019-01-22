@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf70a7a-672e-40e2-88b0-08f7ef7d4a8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_dados/prm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_dados/prm/dplpes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_dados/sebd/delopr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/prm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_regras/prm/rplpes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_telas/prm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_dados/accl/difprp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_dados/sebd/defopr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/accl/rifprp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_regras/sebd/refopr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_telas/sebd/efopr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dados/clcm/dcrctm.py" beforeDir="false" afterPath="$PROJECT_DIR$/_dados/clcm/dcrctm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_regras/accl/rafcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/accl/rafcon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_regras/clcm/rcrctm.py" beforeDir="false" afterPath="$PROJECT_DIR$/_regras/clcm/rcrctm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_telas/clcm/crctm.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/clcm/crctm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tafcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tafcon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/TelaMenu.fbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_telas/desingner/tela_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tela_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_telas/desingner/tsulog.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/desingner/tsulog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descrição.txt" beforeDir="false" afterPath="$PROJECT_DIR$/descrição.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_telas/sys/mn01.py" beforeDir="false" afterPath="$PROJECT_DIR$/_telas/sys/mn01.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,33 +24,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_telas/clcm/crctm.py">
+        <entry file="file://$PROJECT_DIR$/_telas/sys/mn01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="210">
+              <caret line="93" column="65" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
               <folding>
-                <element signature="e#113#122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_dados/clcm/dcrctm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="220" column="31" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_regras/clcm/rcrctm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="40" />
-              <folding>
-                <element signature="e#25#54#0" expanded="true" />
+                <element signature="e#25#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,19 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DatePickerCtrl</find>
-      <find>strf</find>
-      <find>RightClickRibbonTabBar</find>
-      <find>RightClickRibbonTab</find>
-      <find>fc_item_ativa_campos</find>
-      <find>item_desativa_campos</find>
-      <find>consultar</find>
-      <find>atualiza_grade</find>
-      <find>tc_item_codigo</find>
-      <find>grade</find>
-      <find>max</find>
-      <find>GetGridCursorRow()</find>
-      <find>GetCellValue</find>
       <find>index</find>
       <find>ativa_campo</find>
       <find>ativar_campo</find>
@@ -99,13 +63,26 @@
       <find>item_ativar</find>
       <find>gerar</find>
       <find>tp_cond_pgto</find>
+      <find>empresa</find>
+      <find>gera</find>
+      <find>focus_im</find>
+      <find>operacao</find>
+      <find>conta_con</find>
+      <find>loc_operacao</find>
+      <find>EFOPR</find>
+      <find>loc_conta</find>
+      <find>campos</find>
+      <find>IMOB</find>
+      <find>item_confirmar</find>
+      <find>rif</find>
+      <find>backup</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="fernandovb &lt;40531223+fernandovb@users.noreply.github.com&gt;c" />
         <option value="fernandovb &lt;40531223+fernandovb@users.noreply.github.com&gt;" />
+        <option value="fernandovb &lt;40531223+fernandovb@users.noreply.github.com&gt;c" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,13 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_dados/dafcon.py" />
-        <option value="$PROJECT_DIR$/_regras/rafcon.py" />
-        <option value="$PROJECT_DIR$/_telas/afcon.py" />
-        <option value="$PROJECT_DIR$/_telas/arslc.py" />
-        <option value="$PROJECT_DIR$/_regras/accl/__init__.py" />
-        <option value="$PROJECT_DIR$/_telas/accl/__init__.py" />
-        <option value="$PROJECT_DIR$/_dados/conexao.py" />
         <option value="$PROJECT_DIR$/_telas/sebd/__init__.py" />
         <option value="$PROJECT_DIR$/_regras/sys/__init__.py" />
         <option value="$PROJECT_DIR$/_regras/sebd/__init__.py" />
@@ -132,12 +102,10 @@
         <option value="$PROJECT_DIR$/_dados/sys/ssgcon.py" />
         <option value="$PROJECT_DIR$/_dados/accl/__init__.py" />
         <option value="$PROJECT_DIR$/_dados/sys/conexao.py" />
-        <option value="$PROJECT_DIR$/_regras/accl/rafcon.py" />
         <option value="$PROJECT_DIR$/_dados/sys/__init__.py" />
         <option value="$PROJECT_DIR$/_dados/__init__.py" />
         <option value="$PROJECT_DIR$/_telas/sys/__init__.py" />
         <option value="$PROJECT_DIR$/_telas/desingner/tssdate.py" />
-        <option value="$PROJECT_DIR$/_telas/sys/mn01.py" />
         <option value="$USER_HOME$/Downloads/Ribbon.py" />
         <option value="$PROJECT_DIR$/_telas/rb_tela.py" />
         <option value="$PROJECT_DIR$/_telas/RbTelarb_tela.py" />
@@ -155,15 +123,24 @@
         <option value="$PROJECT_DIR$/descrição.txt" />
         <option value="$PROJECT_DIR$/_dados/sebd/elopr.py" />
         <option value="$PROJECT_DIR$/_dados/sebd/delopr.py" />
-        <option value="$PROJECT_DIR$/_telas/desingner/tela_menu.py" />
         <option value="$PROJECT_DIR$/_telas/desingner/tsulog.py" />
         <option value="$PROJECT_DIR$/_regras/sys/ssglob.py" />
         <option value="$PROJECT_DIR$/_dados/prm/plpes.py" />
         <option value="$PROJECT_DIR$/_dados/prm/__init__.py" />
         <option value="$PROJECT_DIR$/_regras/prm/rplpes.py" />
         <option value="$PROJECT_DIR$/_dados/clcm/dcrctm.py" />
+        <option value="$PROJECT_DIR$/_dados/accl/difprp.py" />
+        <option value="$PROJECT_DIR$/_regras/sebd/relopr.py" />
+        <option value="$PROJECT_DIR$/_dados/defopr.py" />
+        <option value="$PROJECT_DIR$/_regras/accl/rafcon.py" />
+        <option value="$PROJECT_DIR$/_telas/sebd/efopr.py" />
+        <option value="$PROJECT_DIR$/_dados/sebd/defopr.py" />
+        <option value="$PROJECT_DIR$/_regras/sebd/refopr.py" />
+        <option value="$PROJECT_DIR$/_regras/accl/rifprp.py" />
         <option value="$PROJECT_DIR$/_regras/clcm/rcrctm.py" />
         <option value="$PROJECT_DIR$/_telas/clcm/crctm.py" />
+        <option value="$PROJECT_DIR$/_telas/desingner/tela_menu.py" />
+        <option value="$PROJECT_DIR$/_telas/sys/mn01.py" />
       </list>
     </option>
   </component>
@@ -188,29 +165,13 @@
             <path>
               <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
-              <item name="_dados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
-              <item name="_regras" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
-              <item name="_regras" type="462c0819:PsiDirectoryNode" />
-              <item name="prm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
-              <item name="_regras" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="_telas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoContabil" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoContabil" type="462c0819:PsiDirectoryNode" />
               <item name="_telas" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,14 +180,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_dados/sys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_dados/sebd" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ProjetoContabil\_dados\sebd" />
       <recent name="C:\ProjetoContabil\_telas" />
       <recent name="C:\ProjetoContabil\_dados\sys" />
-      <recent name="C:\ProjetoContabil\_dados\sebd" />
       <recent name="C:\ProjetoContabil\_regras\sys" />
       <recent name="C:\ProjetoContabil\_regras\sebd" />
     </key>
@@ -433,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546533767221</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="No módulo crctm, inclusa a opção de gerar contrato.&#10;O sistema pega informações do BD e insere os dados nos indicadores do&#10;documento WORD.">
+      <created>1546707836721</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1546707836721</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -483,7 +451,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49966952" weight="0.29745042" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49966952" weight="0.32152975" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32907802" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -498,7 +466,8 @@
     <MESSAGE value="Inclusão de tela de lançamento contábil, com validação e gravação de partidas. Falta a consulta dos lançamentos.&#10;Também foi criado pastas accl (contabilidade) nas bibliotecas _telas, _dados e _regras." />
     <MESSAGE value="Separa de arquivos em módulos" />
     <MESSAGE value="Criação de tela de lançamento de contrato. &#10;Tela possui métodos de inclusão e consulta.&#10;Falta ainda métodos de alteração, gerar documento (arquivo doc) e emissão de faturas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação de tela de lançamento de contrato. &#10;Tela possui métodos de inclusão e consulta.&#10;Falta ainda métodos de alteração, gerar documento (arquivo doc) e emissão de faturas." />
+    <MESSAGE value="No módulo crctm, inclusa a opção de gerar contrato.&#10;O sistema pega informações do BD e insere os dados nos indicadores do&#10;documento WORD." />
+    <option name="LAST_COMMIT_MESSAGE" value="No módulo crctm, inclusa a opção de gerar contrato.&#10;O sistema pega informações do BD e insere os dados nos indicadores do&#10;documento WORD." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -513,67 +482,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_dados/accl/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_regras/accl/rafcon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_regras/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/sys/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/wx/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/tssdate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#315#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Ribbon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="89" />
-          <folding>
-            <element signature="e#100#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_telas/desingner/SEBD_EREMP01.fbp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -641,30 +549,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="119" column="38" lean-forward="true" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dateutil/parser/_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="650" selection-start-line="650" selection-end-line="650" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/sys/mn01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/sebd/delopr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#25#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_dados/sebd/deremp01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1700">
@@ -795,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/descrição.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -813,13 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -854,29 +718,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_regras/clcm/rcrctm.py">
+    <entry file="file://$PROJECT_DIR$/_dados/clcm/dcrctm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#25#54#0" expanded="true" />
+            <element signature="e#171#206#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_dados/clcm/dcrctm.py">
+    <entry file="file://$PROJECT_DIR$/_dados/sebd/delopr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="220" column="31" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/darslc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/accl/arslc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="85" lean-forward="true" selection-start-line="81" selection-end-line="85" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/dafcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/sebd/defopr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/accl/afcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding>
+            <element signature="e#25#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/sebd/refopr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#25#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/accl/rafcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="16" selection-end-line="20" />
+          <folding>
+            <element signature="e#25#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/sebd/efopr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#25#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/desingner/tela_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/clcm/rcrctm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="159" column="13" lean-forward="true" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="22" />
+          <folding>
+            <element signature="e#25#54#0" expanded="true" />
+            <element signature="e#247#4991#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_telas/clcm/crctm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="212">
+          <caret line="252" selection-start-line="252" selection-end-line="252" />
           <folding>
             <element signature="e#113#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dados/accl/difprp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_regras/accl/rifprp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_telas/sys/mn01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="93" column="65" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
