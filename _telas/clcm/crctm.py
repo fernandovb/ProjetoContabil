@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# TELEFONE 99993-0162 / 3325-1413 / 3325-3003 / Antonio de Lima
-# robisagro@outlook.com
 
 import wx
 import wx.ribbon
@@ -117,9 +115,11 @@ class CRCTM(TCRCTM):
 
     def ac_ctr_cancelar(self, event):
         self.ctr_acao = 0
+        self.item_acao = 0
         self.sb_contrato.SetStatusText('', 0)
         self.fc_ctr_ativa_botoes()
         self.fc_ctr_ativar_campos(False)
+        self.fc_item_ativa_botoes()
         self.fc_item_ativar_campos(False)
 
     def ac_ctr_gerar_doc(self, event):
@@ -433,7 +433,10 @@ class CRCTM(TCRCTM):
                 self.bt_item_consultar.Enable(True)
             else:
                 self.bt_item_consultar.Enable(False)
-            self.bt_item_adicionar.Enable(True)
+            if self.ctr_acao == 0:
+                self.bt_item_adicionar.Enable(False)
+            else:
+                self.bt_item_adicionar.Enable(True)
             self.bt_item_editar.Enable(False)
             self.bt_item_excluir.Enable(False)
             self.bt_item_confirmar.Enable(False)

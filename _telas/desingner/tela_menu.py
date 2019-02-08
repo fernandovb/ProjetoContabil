@@ -10,7 +10,6 @@
 import wx
 import wx.xrc
 
-
 ###########################################################################
 ## Class FrmMenu
 ###########################################################################
@@ -24,7 +23,7 @@ class FrmMenu(wx.Frame):
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
         self.MnbMenu = wx.MenuBar(0)
-		self.MnPrincipal = wx.Menu()
+        self.MnPrincipal = wx.Menu()
         self.mn_cadastro = wx.Menu()
         self.mn_dbemp01 = wx.MenuItem(self.mn_cadastro, wx.ID_ANY, u"Empresas", wx.EmptyString, wx.ITEM_NORMAL)
         self.mn_cadastro.Append(self.mn_dbemp01)
@@ -35,18 +34,18 @@ class FrmMenu(wx.Frame):
         self.mn_crctm = wx.MenuItem(self.mn_cadastro, wx.ID_ANY, u"Contratos", wx.EmptyString, wx.ITEM_NORMAL)
         self.mn_cadastro.Append(self.mn_crctm)
 
-		self.MnPrincipal.AppendSubMenu(self.mn_cadastro, u"Cadastros")
+        self.MnPrincipal.AppendSubMenu(self.mn_cadastro, u"Cadastros")
 
-		self.MniSair = wx.MenuItem(self.MnPrincipal, wx.ID_ANY, u"&Sair", wx.EmptyString, wx.ITEM_NORMAL)
-		self.MnPrincipal.Append(self.MniSair)
+        self.MniSair = wx.MenuItem(self.MnPrincipal, wx.ID_ANY, u"&Sair", wx.EmptyString, wx.ITEM_NORMAL)
+        self.MnPrincipal.Append(self.MniSair)
 
-		self.MnbMenu.Append(self.MnPrincipal, u"Principal")
+        self.MnbMenu.Append(self.MnPrincipal, u"Principal")
 
-		self.mn_sistema = wx.Menu()
-		self.mn_backup = wx.MenuItem(self.mn_sistema, wx.ID_ANY, u"Backup", u"Cópia de segurança do BD", wx.ITEM_NORMAL)
-		self.mn_sistema.Append(self.mn_backup)
+        self.mn_sistema = wx.Menu()
+        self.mn_backup = wx.MenuItem(self.mn_sistema, wx.ID_ANY, u"Backup", u"Cópia de segurança do BD", wx.ITEM_NORMAL)
+        self.mn_sistema.Append(self.mn_backup)
 
-		self.MnbMenu.Append(self.mn_sistema, u"Sistema")
+        self.MnbMenu.Append(self.mn_sistema, u"Sistema")
 
         self.MnSobre = wx.Menu()
         self.mn_info = wx.MenuItem(self.MnSobre, wx.ID_ANY, u"Sobre o sistema", wx.EmptyString, wx.ITEM_NORMAL)
@@ -64,10 +63,10 @@ class FrmMenu(wx.Frame):
         self.tc_executar = wx.TextCtrl(self.m_toolBar1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
                                        0)
         self.m_toolBar1.AddControl(self.tc_executar)
-		self.bt_executar = self.m_toolBar1.AddLabelTool(wx.ID_ANY, u"tool",
-														wx.Bitmap(u"icons/ac_executar_16x16.png", wx.BITMAP_TYPE_ANY),
-														wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString,
-														None)
+        self.bt_executar = self.m_toolBar1.AddLabelTool(wx.ID_ANY, u"tool",
+                                                        wx.Bitmap(u"icons/ac_executar_16x16.png", wx.BITMAP_TYPE_ANY),
+                                                        wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString,
+                                                        None)
 
         self.m_toolBar1.AddSeparator()
 
@@ -102,13 +101,14 @@ class FrmMenu(wx.Frame):
         self.Bind(wx.EVT_MENU, self.ac_prm01, id=self.mn_prm01.GetId())
         self.Bind(wx.EVT_MENU, self.ac_crctm, id=self.mn_crctm.GetId())
         self.Bind(wx.EVT_MENU, self.on_sair, id=self.MniSair.GetId())
-		self.Bind(wx.EVT_MENU, self.ac_backup, id=self.mn_backup.GetId())
+        self.Bind(wx.EVT_MENU, self.ac_backup, id=self.mn_backup.GetId())
         self.Bind(wx.EVT_MENU, self.ac_sobre, id=self.mn_info.GetId())
         self.tc_executar.Bind(wx.EVT_TEXT_ENTER, self.ac_executar)
         self.Bind(wx.EVT_TOOL, self.ac_executar, id=self.bt_executar.GetId())
 
     def __del__(self):
         pass
+
 
     # Virtual event handlers, overide them in your derived class
     def ac_emp01(self, event):
@@ -123,8 +123,8 @@ class FrmMenu(wx.Frame):
     def on_sair(self, event):
         event.Skip()
 
-	def ac_backup(self, event):
-		event.Skip()
+    def ac_backup(self, event):
+        event.Skip()
 
     def ac_sobre(self, event):
         event.Skip()
